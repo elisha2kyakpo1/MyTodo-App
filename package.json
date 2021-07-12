@@ -16,13 +16,14 @@
     "webpack": "^5.44.0"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^5.3.2"
+    "html-webpack-plugin": "^5.3.2",
+    "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
     "test": "jest",
     "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "build": "webpack",
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",
