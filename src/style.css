@@ -7,11 +7,27 @@ body {
 }
 
 .list-item {
+  margin-top: 2px;
   list-style: none;
+  padding: 5px;
+}
+
+.delete {
+  display: none;
 }
 
 .list-item:hover {
-  background-color: #f9fafb;
+  background-color: #fca5a5;
+  cursor: pointer;
+}
+
+.list-item:hover .delete {
+  display: block;
+}
+
+.span {
+  float: right;
+  clear: both;
 }
 
 .button {
@@ -20,6 +36,10 @@ body {
   margin: 0 auto;
   border-radius: 3px;
   font-size: 1.2rem;
+}
+
+.input {
+  font-size: 1.1rem;
 }
 
 .list {
