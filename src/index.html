@@ -5,16 +5,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="../src/style.css">
   <title>TodoList</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container py-5">
     <h2>TodoList</h2>
-    <div class="list" id="todo">
+    <div class="list px-2 py-3" id="todo">
       <h4>Today's To Do</h4>
-      <form action="#" class="form">
-        <input type="text" class="form-control" placeholder="Add to your list">
+      <form action="#" class="form d-flex">
+        <input type="text" class="form-control input" placeholder="Add to your list">
+        <input type="submit" class="sub">
       </form>
+      <ul class="list-data">
+        <i class="fas fa-trash">trash</i>
+      </ul>
+    </div>
+    <div class="d-flex p-3">
+      <button type="button" class="button p-2">Clear all completed</button>
     </div>
   </div>
 </body>

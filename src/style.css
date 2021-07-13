@@ -1,0 +1,30 @@
+body {
+  background-color: bisque;
+}
+
+.container {
+  background-color: lightgray;
+}
+
+.list-item {
+  list-style: none;
+}
+
+.list-item:hover {
+  background-color: #f9fafb;
+}
+
+.button {
+  border: none;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 3px;
+  font-size: 1.2rem;
+}
+
+.list {
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 3px;
+}
