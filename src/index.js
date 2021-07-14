@@ -1,3 +1,5 @@
+import './style.css'
+
 const list = document.querySelector('.list-data');
 const description = document.querySelector('.input');
 const save = document.querySelector('.sub');
