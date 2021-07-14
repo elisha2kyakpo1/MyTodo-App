@@ -17,6 +17,7 @@ body {
   margin-top: 2px;
   list-style: none;
   padding: 5px;
+  cursor: move;
 }
 
 .delete {
@@ -25,16 +26,24 @@ body {
 
 .list-item:hover {
   background-color: #fca5a5;
-  cursor: pointer;
 }
 
 .list-item:hover .delete {
   display: block;
+  cursor: pointer;
+}
+
+.list-data {
+  align-items: center;
 }
 
 .span {
   float: right;
   clear: both;
+}
+
+.check {
+  display: block;
 }
 
 .button {
