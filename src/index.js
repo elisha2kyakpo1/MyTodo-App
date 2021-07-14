@@ -19,42 +19,18 @@ if (localStorage) {
         index: 0,
       },
     ];
-  };
-};
+  }
+}
 
 const alert = () => {
   error.textContent = 'You did not add any To Do!';
   setTimeout(() => error.remove(), 3000);
 };
 
-const addTodo = () => {
-  const description = document.querySelector('.input').value;
-  if (description === '') {
-    alert();
-  } else {
-    const todoObject = {
-      description: description,
-      completed: false,
-      index: todos.length,
-    }
-    todos.push(todoObject);
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }
-  displayData();
-};
-
-const clearCompleted = () => {
-  if (todos.completed.value === 'true') {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-    });
-  };
-};
-
 const hidden = () => {
   while (list.lastElementChild) {
     list.removeChild(list.lastElementChild);
-  };
+  }
 };
 
 const deleteData = (id) => {
@@ -69,7 +45,7 @@ const displayData = () => {
   todos.forEach((item, indexEle) => {
     const listItem = document.createElement('li');
     const checkbox = document.createElement('checkbox');
-    listItem.setAttribute('id', item.index)
+    listItem.setAttribute('id', item.index);
     checkbox.classList.add('check');
     listItem.draggable = true;
     listItem.classList.add('list-item');
@@ -86,6 +62,22 @@ const displayData = () => {
       deleteData(indexEle);
     };
   });
+};
+
+const addTodo = () => {
+  const descriptionData = document.querySelector('.input').value;
+  if (description === '') {
+    alert();
+  } else {
+    const todoObject = {
+      description: descriptionData,
+      completed: false,
+      index: todos.length,
+    };
+    todos.push(todoObject);
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+  displayData();
 };
 
 save.addEventListener('click', (e) => {
