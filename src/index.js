@@ -2,7 +2,20 @@ const list = document.querySelector('.list-data');
 const description = document.querySelector('.input');
 const save = document.querySelector('.sub');
 
-const todos = []
+let todos = []
+
+if (localStorage) {
+  todos = JSON.parse(localStorage.getItem('todos'));
+  if (todos === null) {
+    todos = [
+      {
+        description: 'drink water',
+        completed: false,
+        index: 0,
+      },
+    ];
+  }
+}
 
 const alert = () => {
   return 'You did not add any to do!'
@@ -19,6 +32,7 @@ const addTodo = () => {
       index: todos.length,
     }
     todos.push(todoObject);
+    localStorage.setItem('todos', JSON.stringify(todos));
   }
 
 } 
@@ -41,7 +55,7 @@ const hidden = () => {
 
 const displayData = () => {
   hidden();
-  todos.forEach((item) => {
+  todos.forEach((item, indexEle) => {
     const listItem = document.createElement('li');
     const checkbox = document.createElement('checkbox');
     listItem.setAttribute('id', item.index)
@@ -57,16 +71,16 @@ const displayData = () => {
     listItem.textContent = `${item.description}`;
     listItem.appendChild(span);
     span.appendChild(buttonDelete);
-    buttonDelete.addEventListener('click', (e) => {
-      const deleteElement = e.target.getAttribute('id');
-      todos[deleteData];
-    });
+    buttonDelete.onclick = () => {
+      deleteData(indexEle.index);
+    };
   })
 }
 
 const deleteData = (id) => {
   const selectedItem = todos.findIndex((item) => item.index === id)
   todos.splice(selectedItem, 1);
+  localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 save.addEventListener('click', (e) => {

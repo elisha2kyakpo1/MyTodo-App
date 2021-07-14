@@ -3,7 +3,8 @@ body {
 }
 
 .container {
-  background-color: lightgray;
+  justify-content: center;
+  align-items: center;
 }
 
 .list-item {
