@@ -7,6 +7,12 @@ body {
   align-items: center;
 }
 
+.error {
+  color: red;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 .list-item {
   margin-top: 2px;
   list-style: none;
