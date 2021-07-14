@@ -1,37 +1,26 @@
 const list = document.querySelector('.list-data');
 const description = document.querySelector('.input');
 const save = document.querySelector('.sub');
-const listItem = document.createElement('li');
-const icon = document.createElement('i');
-const span = document.createElement('span');
-const checkbox = document.createElement('checkbox');
-checkbox.classList.add('check');
-listItem.draggable = true;
-listItem.classList.add('list-item');
-list.appendChild(checkbox);
-list.appendChild(listItem);
-const todos = [
-  {
-  description: 'drink tea',
-  completed: false,
-  index: 0
-  },
-  {
-  description: 'drink water',
-  completed: true,
-  index: 1
-  },
-  {
-    description: 'coding',
-    completed: false,
-    index: 2
-  }
-]
+
+const todos = []
+
+const alert = () => {
+  return 'You did not add any to do!'
+}
 
 const addTodo = () => {
   const description = document.querySelector('.input').value;
-  todos.push(description);
-  listItem.innerHTML = `${description}<span class="span"><i class="fas fa-trash delete"></i></span`;
+  if (description === '') {
+    alert();
+  }else{
+    const todoObject = {
+      description: description,
+      completed: false,
+      index: todos.length,
+    }
+    todos.push(todoObject);
+  }
+
 } 
 
 const clearCompleted = () => {
@@ -44,16 +33,49 @@ const clearCompleted = () => {
   }
 };
 
+const hidden = () => {
+  while (list.lastElementChild) {
+    list.removeChild(list.lastElementChild);
+  }
+}
+
+const displayData = () => {
+  hidden();
+  todos.forEach((item) => {
+    const listItem = document.createElement('li');
+    const checkbox = document.createElement('checkbox');
+    listItem.setAttribute('id', item.index)
+    checkbox.classList.add('check');
+    listItem.draggable = true;
+    listItem.classList.add('list-item');
+    list.appendChild(checkbox);
+    list.appendChild(listItem);
+    const buttonDelete = document.createElement('i');
+    const span = document.createElement('span');
+    span.classList.add('span');
+    buttonDelete.classList.add('fas', 'fa-trash', 'delete');
+    listItem.textContent = `${item.description}`;
+    listItem.appendChild(span);
+    span.appendChild(buttonDelete);
+    buttonDelete.addEventListener('click', (e) => {
+      const deleteElement = e.target.getAttribute('id');
+      todos[deleteData];
+    });
+  })
+}
+
+const deleteData = (id) => {
+  const selectedItem = todos.findIndex((item) => item.index === id)
+  todos.splice(selectedItem, 1);
+}
+
 save.addEventListener('click', (e) => {
   e.preventDefault();
-  if (description !== '') {
-    addTodo();
-    description.value = '';
-  }
+  addTodo();
+  displayData();
+  description.value = '';
 })
 
-document.addEventListener('DOMContentLoaded', (e) => {
-  e.preventDefault();
-})
+displayData();
 
 
