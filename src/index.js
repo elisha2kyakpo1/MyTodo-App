@@ -3,7 +3,6 @@ const description = document.querySelector('.input');
 const save = document.querySelector('.sub');
 const inner = document.querySelector('.inner');
 const title = document.querySelector('.title');
-const button = document.querySelector('.button');
 const error = document.createElement('p');
 inner.insertBefore(error, title);
 error.classList.add('error');
