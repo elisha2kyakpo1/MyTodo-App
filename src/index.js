@@ -1,4 +1,4 @@
-import './style.css'
+import './style.css';
 
 const list = document.querySelector('.list-data');
 const description = document.querySelector('.input');
