@@ -20,6 +20,10 @@ body {
   padding: 5px;
 }
 
+.draggable-start {
+  border: 2px dotted black;
+}
+
 .list-item-completed {
   background: #888;
   color: #fff;

@@ -1,5 +1,5 @@
 import './style.css';
-import { displayData, addTodo, deleteData } from './dragNndDrop';
+import { displayData, addTodo, deleteData } from './untils';
 
 addTodo();
 deleteData();

@@ -1,3 +1,5 @@
+import dragDrop from "./drag";
+
 const list = document.querySelector('.list-data');
 const description = document.querySelector('.input');
 const checkInput = document.createElement('INPUT');
@@ -33,8 +35,8 @@ const hidden = () => {
   }
 };
 
-const handleDragStart = (event) => {
-  style.opacity = '0.4';
+const handleDragStart = (el) => {
+  el.style.opacity = '0.4';
 };
 
 const handleDragEnd = () => {
@@ -43,8 +45,8 @@ const handleDragEnd = () => {
 
 const deleteData = (id) => {
   const object = document.getElementById(id);
-  todos.splice(object, 1);
   if (object !== null) {
+    todos.splice(object, 1);
     object.remove();
     localStorage.setItem('todos', JSON.stringify(todos));
   }
@@ -74,19 +76,9 @@ const displayData = () => {
       e.preventDefault();
       deleteData(indexEle);
     });
-    
-    listItem.addEventListener('dragstart', (e) => {
-      e.preventDefault();
-      handleDragStart(indexEle); 
-      e.dataTransfer.setData('text/plain', e.target.id);
-      e.currentTarget.style.backgroundColor = 'yellow';
-  
-    });
-    listItem.addEventListener('dragend', (e) => {
-      e.preventDefault();
-      handleDragEnd(), false 
-    });
   });
+
+  dragDrop();
 };
 
 const addTodo = () => {
