@@ -1,5 +1,5 @@
 body {
-  background-color: bisque;
+  background-color: lightgray;
 }
 
 .container {
@@ -14,10 +14,16 @@ body {
 }
 
 .list-item {
-  margin-top: 2px;
-  list-style: none;
-  padding: 5px;
   cursor: move;
+  margin-top: 2px;
+  list-style-type: none;
+  padding: 5px;
+}
+
+.list-item-completed {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
 }
 
 .delete {
@@ -25,7 +31,7 @@ body {
 }
 
 .list-item:hover {
-  background-color: #fca5a5;
+  background-color: #ef4444;
 }
 
 .list-item:hover .delete {
@@ -52,6 +58,10 @@ body {
   margin: 0 auto;
   border-radius: 3px;
   font-size: 1.2rem;
+}
+
+.inner {
+  box-shadow: 5px 5px 5px;
 }
 
 .input {

@@ -34,9 +34,7 @@ const hidden = () => {
 };
 
 const handleDragStart = (event) => {
-  // style.opacity = '0.4';
-  event.dataTransfer.setData('text/plain', event.target.id);
-  event.currentTarget.style.backgroundColor = 'yellow';
+  style.opacity = '0.4';
 };
 
 const handleDragEnd = () => {
@@ -44,10 +42,12 @@ const handleDragEnd = () => {
 };
 
 const deleteData = (id) => {
-  const objective = document.getElementById(id);
-  todos.splice(objective, 1);
-  localStorage.setItem('todos', JSON.stringify(todos));
-  objective.remove();
+  const object = document.getElementById(id);
+  todos.splice(object, 1);
+  if (object !== null) {
+    object.remove();
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
 };
 
 const displayData = () => {
@@ -78,6 +78,8 @@ const displayData = () => {
     listItem.addEventListener('dragstart', (e) => {
       e.preventDefault();
       handleDragStart(indexEle); 
+      e.dataTransfer.setData('text/plain', e.target.id);
+      e.currentTarget.style.backgroundColor = 'yellow';
   
     });
     listItem.addEventListener('dragend', (e) => {
@@ -110,6 +112,11 @@ save.addEventListener('click', (e) => {
   description.value = '';
 });
 
-displayData();
+
+list.addEventListener('click', (ev) => {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('list-item-completed');
+  }
+}, false);
 
 export { displayData, addTodo, deleteData };
