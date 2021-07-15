@@ -36,9 +36,11 @@ const hidden = () => {
 
 const deleteData = (id) => {
   const objective = document.getElementById(id);
-  objective.remove();
-  todos.splice(objective, 1);
-  localStorage.setItem('todos', JSON.stringify(todos));
+  if (objective !== null) {
+    objective.remove();
+    todos.splice(objective, 1);
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
 };
 
 const displayData = () => {
@@ -73,7 +75,7 @@ const addTodo = () => {
     const todoObject = {
       description: descriptionData,
       completed: false,
-      index: todos.length,
+      index: todos.length - 1,
     };
     todos.push(todoObject);
     localStorage.setItem('todos', JSON.stringify(todos));
