@@ -12,16 +12,18 @@ error.classList.add('error');
 let todos = [];
 
 if (localStorage) {
-  todos = JSON.parse(localStorage.getItem('todos'));
-  if (todos === null) {
-    todos = [
-      {
+  todos.forEach((arr) => {
+    if (arr !== 0) {
+      const defaultToDo = {
         description: 'drink water',
         completed: false,
-        index: 0,
-      },
-    ];
-  }
+        index: todos.length,
+      }
+    
+      todos.push(defaultToDo);
+    }
+  });
+  todos = JSON.parse(localStorage.getItem('todos'));
 }
 
 const alert = () => {
@@ -33,14 +35,6 @@ const hidden = () => {
   while (list.lastElementChild) {
     list.removeChild(list.lastElementChild);
   }
-};
-
-const handleDragStart = (el) => {
-  el.style.opacity = '0.4';
-};
-
-const handleDragEnd = () => {
-  this.style.opacity = '1';
 };
 
 const deleteData = (id) => {
@@ -66,10 +60,9 @@ const displayData = () => {
     const span = document.createElement('span');
     const span1 = document.createElement('span');
     span.classList.add('span');
-    buttonDelete.classList.add('fas', 'fa-trash', 'delete');
-    span1.appendChild(checkInput);
-    listItem.appendChild(span);
+    buttonDelete.classList.add('fas', 'fa-trash', 'delete');   
     listItem.textContent = `${item.description}`;
+    listItem.appendChild(span1);
     listItem.appendChild(span);
     span.appendChild(buttonDelete);
     buttonDelete.addEventListener('click', (e) => {

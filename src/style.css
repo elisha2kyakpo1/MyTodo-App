@@ -14,20 +14,36 @@ body {
 }
 
 .list-item {
+  position: relative;
+  font-size: 1.2rem;
   cursor: move;
-  margin-top: 2px;
   list-style-type: none;
-  padding: 5px;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #888;
 }
 
 .draggable-start {
   border: 2px dotted black;
 }
 
-.list-item-completed {
+.list-item.list-item-completed {
   background: #888;
   color: #fff;
   text-decoration: line-through;
+}
+
+.list-item.list-item-completed::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 4px 4px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 18px;
+  width: 9px;
 }
 
 .delete {
@@ -45,6 +61,7 @@ body {
 
 .list-data {
   align-items: center;
+  padding-left: 0;
 }
 
 .span {
