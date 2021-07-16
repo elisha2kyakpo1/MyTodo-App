@@ -157,5 +157,4 @@ export {
   deleteData,
   completeTodo,
   filtered,
-  todos,
 };

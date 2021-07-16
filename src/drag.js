@@ -5,13 +5,10 @@ const dragAfterElement = (element, y) => {
     const offset = y - box.top - box.height / 2;
     if (offset < 0 && offset > closest.offset) {
       return {
-        offset: offset,
+        offset: offset(),
       };
-    } else {
-      {
-        return closest;
-      }
-    }
+    } 
+    return closest;
   }, { offset: Number.POSITIVE_INFINITY }).element;
 };
 
