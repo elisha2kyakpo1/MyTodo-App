@@ -124,8 +124,8 @@ const filtered = () => {
         return newArr;
       }
     }
-    displayData();
   });
+  displayData();
 };
 
 const completeTodo = () => {
@@ -155,5 +155,5 @@ export {
   displayData,
   addTodo,
   deleteData,
-  completeTodo
+  completeTodo,
 };
