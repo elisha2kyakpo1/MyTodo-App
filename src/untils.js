@@ -120,10 +120,10 @@ const filtered = () => {
       if (ele.completed === false) {
         const arr = ele;
         newArr.push(arr);
-        return newArr;
       }
       localStorage.setItem('todos', JSON.stringify(newArr));
     }
+    return newArr;
   });
   displayData();
 };
@@ -138,7 +138,7 @@ const completeTodo = () => {
 
 list.addEventListener('click', (ev) => {
   todos.forEach((items) => {
-    if (items.completed === false && ev.target.tagName === 'LI') {
+    if (items.completed === false || ev.target.tagName === 'LI') {
       items.completed = true;
       ev.target.classList.toggle('list-item-completed');
     } else if (items.completed === false && ev.target.tagName === 'LI') {
