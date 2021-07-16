@@ -111,6 +111,14 @@ save.addEventListener('click', (e) => {
   description.value = '';
 });
 
+const completeTodo = () => {
+  const button = document.querySelector('.button');
+  button.addEventListener('click', () => {
+     const final = todos.filter(filtered)
+    localStorage.setItem('todos', JSON.stringify(final));  
+  });
+};
+
 const filtered = () => {
   const newArr = [];
   todos.forEach((ele, id) => {
@@ -120,9 +128,11 @@ const filtered = () => {
       if (ele.completed === false) {
         const arr = ele;
         newArr.push(arr);
+        localStorage.setItem('todos', JSON.stringify(newArr));
         return newArr;
       }
     }
+    displayData();
   });
 };
 
@@ -141,4 +151,4 @@ list.addEventListener('click', (ev) =>  {
 
 displayData();
 
-export { displayData, addTodo, deleteData, todos, filtered };
+export { displayData, addTodo, deleteData, completeTodo };
