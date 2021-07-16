@@ -120,9 +120,9 @@ const filtered = () => {
       if (ele.completed === false) {
         const arr = ele;
         newArr.push(arr);
-        localStorage.setItem('todos', JSON.stringify(newArr));
         return newArr;
       }
+      localStorage.setItem('todos', JSON.stringify(newArr));
     }
   });
   displayData();
@@ -156,4 +156,6 @@ export {
   addTodo,
   deleteData,
   completeTodo,
+  filtered,
+  todos,
 };

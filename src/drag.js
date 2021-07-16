@@ -6,8 +6,9 @@ const dragAfterElement = (element, y) => {
     if (offset < 0 && offset > closest.offset) {
       return {
         offset: offset, element: child,
-       closest,
       }
+    } else {
+      return closest;
     }
   }, { offset: Number.POSITIVE_INFINITY }).element;
 }
