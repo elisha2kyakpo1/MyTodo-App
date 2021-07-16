@@ -7,7 +7,7 @@ const dragAfterElement = (element, y) => {
       return {
         offset: offset(),
       };
-    } 
+    }
     return closest;
   }, { offset: Number.POSITIVE_INFINITY }).element;
 };

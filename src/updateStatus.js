@@ -1,6 +1,6 @@
 import { filtered } from './untils';
 
-let todo = [];
+const todo = [];
 const completeTodo = () => {
   const button = document.querySelector('.button');
   button.addEventListener('click', () => {
