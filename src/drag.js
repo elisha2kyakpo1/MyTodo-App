@@ -5,12 +5,11 @@ const dragAfterElement = (element, y) => {
     const offset = y - box.top - box.height / 2;
     if (offset < 0 && offset > closest.offset) {
       return {
-        offset: offset, element: child
+        offset: offset, element: child,
+       closest,
       }
-    } else {
-      return closest;
     }
-  }, {offset: Number.POSITIVE_INFINITY}).element;
+  }, { offset: Number.POSITIVE_INFINITY }).element;
 }
 
 const dragDrop = () => {
@@ -20,18 +19,16 @@ const dragDrop = () => {
   dragList.forEach((lists) => {
     lists.addEventListener('dragstart', () => {
       lists.classList.add('draggable-start');
-    })
+    });
 
     lists.addEventListener('dragend', () => {
       setTimeout(() => lists.classList.remove('draggable-start'), 0);
     });
   });
 
-
-
   ul.addEventListener('dragover', (e) => {
     e.preventDefault();
-    dragAfterElement(ul, e.clientY)
+    dragAfterElement(ul, e.clientY);
     const dragItem = document.querySelector('.list-item');
     ul.appendChild(dragItem);
   });

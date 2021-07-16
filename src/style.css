@@ -24,7 +24,7 @@ body {
 }
 
 .list-item.draggable-start {
-  opacity: 0.5px;
+  opacity: 0.5;
 }
 
 .list-item.list-item-completed {

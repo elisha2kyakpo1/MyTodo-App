@@ -1,4 +1,5 @@
-import dragDrop from "./drag";
+import dragDrop from './drag';
+
 const list = document.querySelector('.list-data');
 const description = document.querySelector('.input');
 const checkInput = document.createElement('INPUT');
@@ -22,7 +23,6 @@ const storageAvailable = (type) => {
     return e instanceof DOMException && (e.code === 22 || e.code === 1014 || e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED') && (storage && storage.length !== 0);
   }
 };
-
 
 if (storageAvailable('localStorage')) {
   todos = JSON.parse(localStorage.getItem('todos'));
@@ -72,7 +72,7 @@ const displayData = () => {
       const span = document.createElement('span');
       const span1 = document.createElement('span');
       span.classList.add('span');
-      buttonDelete.classList.add('fas', 'fa-trash', 'delete');   
+      buttonDelete.classList.add('fas', 'fa-trash', 'delete');
       listItem.textContent = `${item.description}`;
       listItem.appendChild(span1);
       listItem.appendChild(span);
@@ -111,14 +111,6 @@ save.addEventListener('click', (e) => {
   description.value = '';
 });
 
-const completeTodo = () => {
-  const button = document.querySelector('.button');
-  button.addEventListener('click', () => {
-     const final = todos.filter(filtered)
-    localStorage.setItem('todos', JSON.stringify(final));  
-  });
-};
-
 const filtered = () => {
   const newArr = [];
   todos.forEach((ele, id) => {
@@ -136,7 +128,15 @@ const filtered = () => {
   });
 };
 
-list.addEventListener('click', (ev) =>  {
+const completeTodo = () => {
+  const button = document.querySelector('.button');
+  button.addEventListener('click', () => {
+    const final = todos.filter(filtered);
+    localStorage.setItem('todos', JSON.stringify(final));
+  });
+};
+
+list.addEventListener('click', (ev) => {
   todos.forEach((items) => {
     if (items.completed === false && ev.target.tagName === 'LI') {
       items.completed = true;
@@ -151,4 +151,9 @@ list.addEventListener('click', (ev) =>  {
 
 displayData();
 
-export { displayData, addTodo, deleteData, completeTodo };
+export {
+  displayData,
+  addTodo,
+  deleteData,
+  completeTodo
+};
