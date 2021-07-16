@@ -1,11 +1,10 @@
-import { todos } from "./untils";
+import { filtered, todos } from "./untils";
 
 const completeTodo = () => {
   const button = document.querySelector('.button');
   button.addEventListener('click', () => {
-    todos.forEach((ele) => {
-      todos.filter((item) => item.complete === false);
-    });
+     const final = todos.filter(filtered)
+    localStorage.setItem('todos', JSON.stringify(final));  
   });
 };
 

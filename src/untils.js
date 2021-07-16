@@ -50,7 +50,7 @@ const hidden = () => {
 
 const deleteData = (id) => {
   const object = document.getElementById(id);
-  if (object === null) {
+  if (object !== null) {
     todos.splice(object, 1);
     object.remove();
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -111,17 +111,34 @@ save.addEventListener('click', (e) => {
   description.value = '';
 });
 
+const filtered = () => {
+  const newArr = [];
+  todos.forEach((ele, id) => {
+    const object = document.getElementById(id);
+    if (object !== null) {
+      object.remove();
+      if (ele.completed === false) {
+        const arr = ele;
+        newArr.push(arr);
+        return newArr;
+      }
+    }
+  });
+};
+
 list.addEventListener('click', (ev) =>  {
   todos.forEach((items) => {
     if (items.completed === false && ev.target.tagName === 'LI') {
       items.completed = true;
       ev.target.classList.toggle('list-item-completed');
+    } else if (items.completed === false && ev.target.tagName === 'LI') {
+      items.completed = false;
+      ev.target.classList.toggle('list-item');
     }
-    todos.push(items);
   });
   localStorage.setItem('todos', JSON.stringify(todos));
 });
 
 displayData();
 
-export { displayData, addTodo, deleteData, todos };
+export { displayData, addTodo, deleteData, todos, filtered };
