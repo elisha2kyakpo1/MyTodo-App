@@ -5,13 +5,16 @@ const dragAfterElement = (element, y) => {
     const offset = y - box.top - box.height / 2;
     if (offset < 0 && offset > closest.offset) {
       return {
-        offset: offset, element: child,
-      }
+        offset: offset,
+        element: child,
+      };
     } else {
-      return closest;
+      {
+        return closest;
+      };
     }
   }, { offset: Number.POSITIVE_INFINITY }).element;
-}
+};
 
 const dragDrop = () => {
   const ul = document.querySelector('.list-data');
