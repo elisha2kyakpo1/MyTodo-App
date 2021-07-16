@@ -1,12 +1,12 @@
+import { todos } from "./untils";
+
 const completeTodo = () => {
-  
-  let todos = [];
-  check.add
-}
+  const button = document.querySelector('.button');
+  button.addEventListener('click', () => {
+    todos.forEach((ele) => {
+      todos.filter((item) => item.complete === false);
+    });
+  });
+};
 
-todos.forEach((ele) => {
-  if (ele.completed === false) {
-    ele.completed = true;
-  }
-})
-
+export default completeTodo;

@@ -1,5 +1,4 @@
 import dragDrop from "./drag";
-
 const list = document.querySelector('.list-data');
 const description = document.querySelector('.input');
 const checkInput = document.createElement('INPUT');
@@ -11,19 +10,31 @@ inner.insertBefore(error, title);
 error.classList.add('error');
 let todos = [];
 
-if (localStorage) {
-  todos.forEach((arr) => {
-    if (arr !== 0) {
-      const defaultToDo = {
-        description: 'drink water',
-        completed: false,
-        index: todos.length,
-      }
-    
-      todos.push(defaultToDo);
-    }
-  });
+const storageAvailable = (type) => {
+  let storage;
+  try {
+    storage = window[type];
+    const x = '__storage_test__';
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return e instanceof DOMException && (e.code === 22 || e.code === 1014 || e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED') && (storage && storage.length !== 0);
+  }
+};
+
+
+if (storageAvailable('localStorage')) {
   todos = JSON.parse(localStorage.getItem('todos'));
+  if (todos === null) {
+    todos = [
+      {
+        description: 'Drink water',
+        completed: false,
+        index: 0,
+      },
+    ];
+  }
 }
 
 const alert = () => {
@@ -39,7 +50,7 @@ const hidden = () => {
 
 const deleteData = (id) => {
   const object = document.getElementById(id);
-  if (object !== null) {
+  if (object === null) {
     todos.splice(object, 1);
     object.remove();
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -48,31 +59,34 @@ const deleteData = (id) => {
 
 const displayData = () => {
   hidden();
-  todos.forEach((item, indexEle) => {
-    const listItem = document.createElement('li');
-    checkInput.setAttribute('type', 'checkbox');
-    listItem.setAttribute('id', item.index);
-    checkInput.classList.add('check');
-    listItem.draggable = true;
-    listItem.classList.add('list-item');
-    list.appendChild(listItem);
-    const buttonDelete = document.createElement('i');
-    const span = document.createElement('span');
-    const span1 = document.createElement('span');
-    span.classList.add('span');
-    buttonDelete.classList.add('fas', 'fa-trash', 'delete');   
-    listItem.textContent = `${item.description}`;
-    listItem.appendChild(span1);
-    listItem.appendChild(span);
-    span.appendChild(buttonDelete);
-    buttonDelete.addEventListener('click', (e) => {
-      e.preventDefault();
-      deleteData(indexEle);
+  if (todos !== null) {
+    todos.forEach((item, indexEle) => {
+      const listItem = document.createElement('li');
+      checkInput.setAttribute('type', 'checkbox');
+      listItem.setAttribute('id', item.index);
+      checkInput.classList.add('check');
+      listItem.draggable = true;
+      listItem.classList.add('list-item');
+      list.appendChild(listItem);
+      const buttonDelete = document.createElement('i');
+      const span = document.createElement('span');
+      const span1 = document.createElement('span');
+      span.classList.add('span');
+      buttonDelete.classList.add('fas', 'fa-trash', 'delete');   
+      listItem.textContent = `${item.description}`;
+      listItem.appendChild(span1);
+      listItem.appendChild(span);
+      span.appendChild(buttonDelete);
+      buttonDelete.addEventListener('click', (e) => {
+        e.preventDefault();
+        deleteData(indexEle);
+      });
     });
-  });
-
+  }
   dragDrop();
 };
+
+document.addEventListener('DOMContentLoaded', displayData());
 
 const addTodo = () => {
   const descriptionData = document.querySelector('.input').value;
@@ -97,11 +111,17 @@ save.addEventListener('click', (e) => {
   description.value = '';
 });
 
+list.addEventListener('click', (ev) =>  {
+  todos.forEach((items) => {
+    if (items.completed === false && ev.target.tagName === 'LI') {
+      items.completed = true;
+      ev.target.classList.toggle('list-item-completed');
+    }
+    todos.push(items);
+  });
+  localStorage.setItem('todos', JSON.stringify(todos));
+});
 
-list.addEventListener('click', (ev) => {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('list-item-completed');
-  }
-}, false);
+displayData();
 
-export { displayData, addTodo, deleteData };
+export { displayData, addTodo, deleteData, todos };
