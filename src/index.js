@@ -1,5 +1,10 @@
 import './style.css';
-import { displayData, addTodo, completeTodo, deleteData } from './untils';
+import {
+  displayData,
+  addTodo,
+  completeTodo,
+  deleteData
+} from './untils';
 
 addTodo();
 deleteData();

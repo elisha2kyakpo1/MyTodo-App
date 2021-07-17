@@ -11,17 +11,18 @@ This app helps user organize their work. A user can create a todo, he/she can cr
 
 To get started, you should first get this file in your local machine by cloning or forking this project or typing in your terminal
 
-> git clone https://github.com/elisha2kyakpo1/MyTodo-App.git
+```
+ git clone https://github.com/elisha2kyakpo1/MyTodo-App.git
 
-> cd MyTodo-App
+ cd MyTodo-App
 
-> npm install webpack webpack-cli --save-dev
+ npm install webpack webpack-cli --save-dev
 
-> npn install
+ npn install
 
+ npm run build
+ ```
 Just run the command below for webpack to compile the code.
-
-> npm run build
 
 ## Contributing
 
@@ -34,7 +35,7 @@ Cloning the project to your local machine
 cd into the project directory
 
 ```
- cd todo-list
+ cd MyTodo-App
 
   Run git checkout -b your-branch-name
 ```

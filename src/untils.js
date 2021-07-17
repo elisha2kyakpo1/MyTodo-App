@@ -104,7 +104,7 @@ const addTodo = () => {
 };
 
 document.addEventListener('keyup', (e) => {
-    if (e.keyCode === 13) {
+  if (e.keyCode === 13) {
     e.preventDefault();
     addTodo();
     displayData();
