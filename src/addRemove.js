@@ -1,19 +1,6 @@
 import TrashImg from './delete.svg';
 import MoreImg from './more.svg';
 
-const addTask = (tasks) => {
-  const str = document.getElementById('description').value;
-  const firstLetter = str.charAt(0).toUpperCase();
-  str.replace(str.charAt(0), firstLetter);
-  const description = str;
-  const completed = false;
-  const date = new Date();
-  const id = date.getMilliseconds();
-
-  if (!tasks) {
-    tasks = [];
-  }
-
   const index = tasks.length + 1;
 
   if (tasks && description !== '') {
