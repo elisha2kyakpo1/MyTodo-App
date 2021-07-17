@@ -39,6 +39,17 @@ const addTask = (tasks) => {
   }
 };
 
+const removeTask = (data, tasks) => {
+  const str = data.replace('div', '');
+  const newTasks = [];
+  tasks.forEach((task) => {
+    if (task.index !== parseInt(str, 10)) {
+      newTasks.push(task);
+    }
+  });
+  window.update(newTasks);
+};
+
 const editTask = (divId, tasks) => {
   const list = document.getElementsByClassName('drag-div');
   Array.from(list).forEach((li) => {
