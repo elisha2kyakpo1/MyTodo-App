@@ -2,8 +2,12 @@ import { drag, drop, allowDrop } from './drag';
 import updateTodo from './updateStatus';
 import RecycleImg from './recycle.svg';
 import MoreImg from './more.svg';
-import { addTask, editTask, clearTodo } from './addRemove';
-import './style.css'
+import {
+  addTask,
+  editTask,
+  clearTodo
+} from './addRemove';
+import './style.css';
 
 let tasks = null;
 
