@@ -45,6 +45,10 @@ const removeTask = (data, tasks) => {
   tasks.forEach((task) => {
     if (task.index !== parseInt(str, 10)) {
       newTasks.push(task);
+      for (let i = 0; i < result.length; i += 1) {
+        result[i].index = i;
+        e[i].id = i;
+      }
     }
   });
   window.update(newTasks);

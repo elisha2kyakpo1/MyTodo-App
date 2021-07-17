@@ -1,127 +1,199 @@
-body {
-  background-color: #fff;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  line-height: 20px;
 }
 
-h1,
-h3,
-h6,
-p {
-  margin: unset;
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  background-color: #f4f5f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-grow: 2;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
-  border: unset;
-  background-color: unset;
+  border: none;
+  outline: none;
+  appearance: none;
+  background-color: transparent;
   cursor: pointer;
 }
 
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  color: black;
+  opacity: 1;
+}
+
 .container {
-  width: 500px;
-  min-height: max-content;
-  background: #f6f6f6;
-  box-shadow: 3px 3px 3px 3px grey;
-  justify-items: stretch;
-  display: grid;
-  grid-template-rows: 36px 36px auto 36px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
+  background-color: #f1f2f5;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  max-width: 500px;
+  width: 100%;
+  margin: 24px;
 }
 
-.top {
-  display: grid;
-  grid-template-columns: 90% 10%;
-  min-height: 36px;
+.page-footer {
+  display: flex;
+  margin: auto;
+  padding: 24px;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   background-color: white;
 }
 
-.title {
-  text-align: start;
-  font-family: monospace;
-  padding-left: 12px;
-  font-size: 1.2rem;
-  grid-row-start: 1;
-  margin: unset;
+.list-title {
+  line-height: 20px;
+  font-weight: 400;
+  padding: 1rem;
 }
 
-#task-form {
-  min-height: 36px;
-  grid-row-start: 2;
+.input-form {
+  display: flex;
   background-color: white;
-  border: 1px solid #dcdcdc7a;
-  display: grid;
-  grid-template-columns: auto 10%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.text {
-  width: 90%;
+.add-todo-input {
+  border: none;
+  padding: 0 40px 0 1rem;
+  line-height: 50px;
+  height: 50px;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  font-weight: 300;
   font-style: italic;
-  border: unset;
-  padding-left: 12px;
 }
 
-.text::first-letter {
-  text-transform: capitalize !important;
-}
-
-input:focus-visible {
-  border: unset;
-  outline: unset;
-}
-
-ul {
-  grid-row-start: 3;
-  margin: unset;
-  padding: unset;
-  background-color: white;
-  list-style-type: none;
-}
-
-li {
-  padding: unset;
-  border: 1px solid #dcdcdc7a;
-}
-
-.task {
-  display: grid;
-  grid-template-columns: 10% auto 10%;
-  padding: 1%;
+.todo {
+  position: relative;
+  font-size: 1rem;
+  padding-left: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-sizing: content-box;
+  display: flex;
   align-items: center;
-}
-
-.description {
-  font-family: monospace;
-  font-weight: 200;
-  letter-spacing: 1px;
-  border: unset;
-  background: transparent;
-}
-
-.circle {
-  width: 28px;
-  height: 28px;
-  background-color: black;
-}
-
-#add-btn {
-  opacity: 0.3;
-}
-
-.add-btn-img {
-  width: 14px;
-  opacity: 0.3;
-}
-
-.edit-btn {
-  cursor: all-scroll;
-}
-
-.refresh-btn {
-  text-align: end;
+  background-color: white;
 }
 
 .dragging {
-  opacity: 0.2;
+  border: 2px solid royalblue;
+}
+
+.todo-completed .toggle .icon {
+  color: #2e8ae6;
+}
+
+.edit {
+  height: 20px;
+  line-height: 20px;
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  font-weight: 300;
+  resize: none;
+  box-shadow: none;
+}
+
+.todo-completed .edit {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.edit:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear-button {
+  margin: 1rem auto;
+  font-weight: 300;
+}
+
+.clear-button:hover {
+  text-decoration: underline;
+}
+
+.icon-button {
+  line-height: 50px;
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.toggle {
+  padding: 0;
+  margin: 0;
+  margin-right: 17px;
+  opacity: 1;
+  color: #c1c1c3;
+}
+
+.drag-button {
   cursor: all-scroll;
+}
+
+.hide {
+  display: none;
+}
+
+.opacity-2 {
+  opacity: 0.2;
+}
+
+.opacity-5 {
+  opacity: 0.5;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.color-gray {
+  color: #515664;
 }
