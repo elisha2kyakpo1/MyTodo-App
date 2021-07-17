@@ -1,22 +1,25 @@
-const todo = [];
-const completeTodoLi = () => {
-  const button = document.querySelector('.button');
-  button.addEventListener('click', () => {
-    const final = todo.filter((ele) => ele);
-    localStorage.setItem('todos', JSON.stringify(final));
-  });
-};
+const updateTodo = () => {
+  const list = document.getElementsByTagName('li');
+  const tempTasks = [];
 
-const deleteDataInf = (id) => {
-  const object = document.getElementById(id);
-  if (object !== null) {
-    todo.splice(object, 1);
-    object.remove();
-    localStorage.setItem('todos', JSON.stringify(todo));
+  if (list.length !== 0) {
+    Array.from(list).forEach((li, index) => {
+      const div = li.getElementsByTagName('div')[0];
+      const completed = div.getElementsByTagName('input')[0].checked;
+      const id = div.getElementsByTagName('input')[0].name;
+      const description = div.getElementsByTagName('input')[1].value;
+
+      const task = {
+        completed,
+        description,
+        index,
+        id,
+      };
+      tempTasks.push(task);
+    });
   }
+
+  return tempTasks;
 };
 
-export {
-  completeTodoLi,
-  deleteDataInf,
-};
+export default updateTodo;
