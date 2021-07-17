@@ -5,7 +5,7 @@ import MoreImg from './more.svg';
 import {
   addTask,
   editTask,
-  clearTodo
+  clearTodo,
 } from './addRemove';
 import './style.css';
 
