@@ -1,0 +1,41 @@
+{
+  "name": "mytodo-app",
+  "version": "1.0.0",
+  "description": "The todoList",
+  "main": "index.js",
+  "dependencies": {
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.19.0",
+    "webpack-cli": "^4.7.2",
+    "webpack": "^5.44.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^5.2.7",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "style-loader": "^3.1.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "dev": "webpack --mode development",
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elisha2kyakpo1/MyTodo-App.git"
+  },
+  "author": "Elisha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elisha2kyakpo1/MyTodo-App/issues"
+  },
+  "homepage": "https://github.com/elisha2kyakpo1/MyTodo-App#readme"
+}
