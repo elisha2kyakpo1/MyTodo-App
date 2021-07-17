@@ -36,6 +36,15 @@ if (storageAvailable('localStorage')) {
   }
 }
 
+const deleteData = (id) => {
+  const object = document.getElementById(id);
+  if (object !== null) {
+    todos.splice(object, 1);
+    object.remove();
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+};
+
 const alert = () => {
   error.textContent = 'You did not add any To Do!';
   setTimeout(() => error.remove(), 3000);
@@ -44,15 +53,6 @@ const alert = () => {
 const hidden = () => {
   while (list.lastElementChild) {
     list.removeChild(list.lastElementChild);
-  }
-};
-
-const deleteData = (id) => {
-  const object = document.getElementById(id);
-  if (object !== null) {
-    todos.splice(object, 1);
-    object.remove();
-    localStorage.setItem('todos', JSON.stringify(todos));
   }
 };
 
