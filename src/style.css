@@ -40,7 +40,7 @@ button {
   text-align: start;
   font-family: monospace;
   padding-left: 12px;
-  font-size: 14px;
+  font-size: 1.2rem;
   grid-row-start: 1;
   margin: unset;
 }
@@ -93,7 +93,6 @@ li {
 .description {
   font-family: monospace;
   font-weight: 200;
-  font-size: 12px;
   letter-spacing: 1px;
   border: unset;
   background: transparent;
