@@ -30,7 +30,8 @@ const dragDrop = () => {
     e.preventDefault();
     dragAfterElement(ul, e.clientY);
     const dragItem = document.querySelector('.list-item');
-    ul.appendChild(dragItem);
+    const dragEle = ul.appendChild(dragItem);
+    localStorage.setItem('todos', JSON.stringify(dragEle));
   });
 };
 
