@@ -1,11 +1,11 @@
-import TrashImg from './delete.svg';
-import MoreImg from './more.svg';
+// import TrashImg from './delete.svg';
+// import MoreImg from './more.svg';
 
 const addTask = (tasks) => {
-  const str = document.getElementById('description').value;
-  const firstLetter = str.charAt(0).toUpperCase();
-  str.replace(str.charAt(0), firstLetter);
-  const description = str;
+  // const str = document.getElementById('description').value;
+  // const firstLetter = str.charAt(0).toUpperCase();
+  // str.replace(str.charAt(0), firstLetter);
+  const description = 'str';
   const completed = false;
   const date = new Date();
   const id = date.getMilliseconds();
@@ -35,7 +35,7 @@ const addTask = (tasks) => {
       }
       return 0;
     });
-    window.update(tasks);
+    // window.update(tasks);
   }
 };
 
@@ -77,7 +77,7 @@ const clearTodo = (tasks) => {
       temp.push(task);
     }
   });
-  window.update(temp);
+  // update(temp);
 };
 
 export { addTask, editTask, clearTodo };
