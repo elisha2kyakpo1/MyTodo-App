@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\n  background-color: bisque;\\n}\\n\\n.container {\\n  justify-content: center;\\n  align-items: center;\\n}\\n\\n.error {\\n  color: red;\\n  font-size: 1.2rem;\\n  text-align: center;\\n}\\n\\n.list-item {\\n  margin-top: 2px;\\n  list-style: none;\\n  padding: 5px;\\n}\\n\\n.delete {\\n  display: none;\\n}\\n\\n.list-item:hover {\\n  background-color: #fca5a5;\\n  cursor: pointer;\\n}\\n\\n.list-item:hover .delete {\\n  display: block;\\n}\\n\\n.span {\\n  float: right;\\n  clear: both;\\n}\\n\\n.button {\\n  border: none;\\n  text-align: center;\\n  margin: 0 auto;\\n  border-radius: 3px;\\n  font-size: 1.2rem;\\n}\\n\\n.input {\\n  font-size: 1.1rem;\\n}\\n\\n.list {\\n  justify-content: center;\\n  align-items: center;\\n  background-color: #fff;\\n  border-radius: 3px;\\n}\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://mytodo-app/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\n  background-color: #fff;\\n}\\n\\nh1,\\nh3,\\nh6,\\np {\\n  margin: unset;\\n}\\n\\nbutton {\\n  border: unset;\\n  background-color: unset;\\n  cursor: pointer;\\n}\\n\\n.container {\\n  width: 500px;\\n  min-height: max-content;\\n  background: #f6f6f6;\\n  box-shadow: 3px 3px 3px 3px grey;\\n  justify-items: stretch;\\n  display: grid;\\n  grid-template-rows: 36px 36px auto 36px;\\n  margin-left: auto;\\n  margin-right: auto;\\n  margin-top: 10%;\\n}\\n\\n.top {\\n  display: grid;\\n  grid-template-columns: 90% 10%;\\n  min-height: 36px;\\n  align-items: center;\\n  background-color: white;\\n}\\n\\n.title {\\n  text-align: start;\\n  font-family: monospace;\\n  padding-left: 12px;\\n  font-size: 14px;\\n  grid-row-start: 1;\\n  margin: unset;\\n}\\n\\n#task-form {\\n  min-height: 36px;\\n  grid-row-start: 2;\\n  background-color: white;\\n  border: 1px solid #dcdcdc7a;\\n  display: grid;\\n  grid-template-columns: auto 10%;\\n}\\n\\n.text {\\n  width: 90%;\\n  font-style: italic;\\n  border: unset;\\n  padding-left: 12px;\\n}\\n\\n.text::first-letter {\\n  text-transform: capitalize !important;\\n}\\n\\ninput:focus-visible {\\n  border: unset;\\n  outline: unset;\\n}\\n\\nul {\\n  grid-row-start: 3;\\n  margin: unset;\\n  padding: unset;\\n  background-color: white;\\n  list-style-type: none;\\n}\\n\\nli {\\n  padding: unset;\\n  border: 1px solid #dcdcdc7a;\\n}\\n\\n.task {\\n  display: grid;\\n  grid-template-columns: 10% auto 10%;\\n  padding: 1%;\\n  align-items: center;\\n}\\n\\n.description {\\n  font-family: monospace;\\n  font-weight: 200;\\n  font-size: 12px;\\n  letter-spacing: 1px;\\n  border: unset;\\n  background: transparent;\\n}\\n\\n.circle {\\n  width: 28px;\\n  height: 28px;\\n  background-color: black;\\n}\\n\\n#add-btn {\\n  opacity: 0.3;\\n}\\n\\n.add-btn-img {\\n  width: 14px;\\n  opacity: 0.3;\\n}\\n\\n.edit-btn {\\n  cursor: all-scroll;\\n}\\n\\n.refresh-btn {\\n  text-align: end;\\n}\\n\\n.dragging {\\n  opacity: 0.2;\\n  cursor: all-scroll;\\n}\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://mytodo-app/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -100,13 +100,77 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, style) {\
 
 /***/ }),
 
+/***/ "./src/addRemove.js":
+/*!**************************!*\
+  !*** ./src/addRemove.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addTask\": () => (/* binding */ addTask),\n/* harmony export */   \"editTask\": () => (/* binding */ editTask),\n/* harmony export */   \"clearTodo\": () => (/* binding */ clearTodo)\n/* harmony export */ });\n/* harmony import */ var _delete_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./delete.svg */ \"./src/delete.svg\");\n/* harmony import */ var _more_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./more.svg */ \"./src/more.svg\");\n\n\n\nconst addTask = (tasks) => {\n  const str = document.getElementById('description').value;\n  const firstLetter = str.charAt(0).toUpperCase();\n  str.replace(str.charAt(0), firstLetter);\n  const description = str;\n  const completed = false;\n  const date = new Date();\n  const id = date.getMilliseconds();\n\n  if (!tasks) {\n    tasks = [];\n  }\n\n  const index = tasks.length + 1;\n\n  if (tasks && description !== '') {\n    const task = {\n      description,\n      completed,\n      index,\n      id,\n    };\n    tasks.push(task);\n    tasks.sort((taskA, taskB) => {\n      const indexA = taskA.position;\n      const indexB = taskB.position;\n      if (indexA < indexB) {\n        return -1;\n      }\n      if (indexA > indexB) {\n        return 1;\n      }\n      return 0;\n    });\n    window.update(tasks);\n  }\n};\n\nconst removeTask = (data, tasks) => {\n  const str = data.replace('div', '');\n  const newTasks = [];\n  tasks.forEach((task) => {\n    if (task.index !== parseInt(str, 10)) {\n      newTasks.push(task);\n    }\n  });\n  window.update(newTasks);\n};\n\nconst editTask = (divId, tasks) => {\n  const list = document.getElementsByClassName('drag-div');\n  Array.from(list).forEach((li) => {\n    if (li.id === divId) {\n      li.style.backgroundColor = '#fff59c78';\n      const img = li.getElementsByTagName('img')[0];\n      img.src = _delete_svg__WEBPACK_IMPORTED_MODULE_0__;\n      img.style.cursor = 'pointer';\n      img.addEventListener('click', () => {\n        removeTask(divId, tasks);\n      });\n    } else {\n      li.style.backgroundColor = 'white';\n      const img = li.getElementsByTagName('img')[0];\n      img.src = _more_svg__WEBPACK_IMPORTED_MODULE_1__;\n      img.style.cursor = 'all-scroll';\n    }\n  });\n};\n\nconst clearTodo = (tasks) => {\n  const temp = [];\n  tasks.forEach((task) => {\n    if (task.completed !== true) {\n      temp.push(task);\n    }\n  });\n  window.update(temp);\n};\n\n\n\n//# sourceURL=webpack://mytodo-app/./src/addRemove.js?");
+
+/***/ }),
+
+/***/ "./src/delete.svg":
+/*!************************!*\
+  !*** ./src/delete.svg ***!
+  \************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"4b93a41b701ac18332f8.svg\";\n\n//# sourceURL=webpack://mytodo-app/./src/delete.svg?");
+
+/***/ }),
+
+/***/ "./src/drag.js":
+/*!*********************!*\
+  !*** ./src/drag.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"allowDrop\": () => (/* binding */ allowDrop),\n/* harmony export */   \"drag\": () => (/* binding */ drag),\n/* harmony export */   \"drop\": () => (/* binding */ drop)\n/* harmony export */ });\nlet toLiIndex = null;\n\nconst allowDrop = (e) => {\n  e.preventDefault();\n  toLiIndex = e.currentTarget.id;\n};\n\nconst drag = (e) => {\n  e.dataTransfer.setData('text', e.currentTarget.id);\n};\n\nconst drop = (e) => {\n  e.preventDefault();\n  const data = e.dataTransfer.getData('text');\n  const oldDiv = document.getElementById(data);\n  const oldLi = document.getElementById(oldDiv.data);\n  const newLi = document.getElementById(toLiIndex);\n  const newDiv = newLi.getElementsByTagName('div')[0];\n  const oldDivData = oldDiv.data;\n  const newDivData = newDiv.data;\n  oldDiv.data = newDivData;\n  newDiv.data = oldDivData;\n  oldLi.appendChild(newDiv);\n  oldLi.removeChild(oldDiv);\n  newLi.appendChild(oldDiv);\n\n  window.update();\n};\n\n\n\n//# sourceURL=webpack://mytodo-app/./src/drag.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+Milestone2-todoList
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _drag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./drag */ \"./src/drag.js\");\n/* harmony import */ var _updateStatus__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./updateStatus */ \"./src/updateStatus.js\");\n/* harmony import */ var _recycle_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./recycle.svg */ \"./src/recycle.svg\");\n/* harmony import */ var _more_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./more.svg */ \"./src/more.svg\");\n/* harmony import */ var _addRemove__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./addRemove */ \"./src/addRemove.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\n\n\n\n\nlet tasks = null;\n\nwindow.updateLocalStorage = function updateLocalStorage(retrieve) {\n  if (retrieve === true) {\n    if (tasks === null) {\n      tasks = JSON.parse(window.localStorage.getItem('tasks'));\n    }\n  } else {\n    window.localStorage.setItem('tasks', JSON.stringify(tasks));\n  }\n  window.displayTasks();\n};\n\nwindow.callAddTask = function callAddTask() {\n  (0,_addRemove__WEBPACK_IMPORTED_MODULE_4__.addTask)(tasks);\n};\n\nwindow.restart = function restart() {\n  tasks = null;\n  window.updateLocalStorage(false);\n};\n\nwindow.update = function update(data) {\n  if (!data) {\n    const response = (0,_updateStatus__WEBPACK_IMPORTED_MODULE_1__.default)();\n    tasks = response;\n  } else {\n    tasks = data;\n  }\n\n  window.updateLocalStorage(false);\n};\n\nwindow.displayTasks = function displayTasks() {\n  const container = document.getElementById('container');\n  const list = document.createElement('ul');\n  list.id = 'list';\n  const EnterImg = '&#8629';\n\n  if (tasks) {\n    tasks.forEach((task, index) => {\n      const { description, id } = task;\n      const li = document.createElement('li');\n      li.id = index;\n      li.addEventListener('drop', (EventTarget) => {\n        li.classList.remove('dragging');\n        (0,_drag__WEBPACK_IMPORTED_MODULE_0__.drop)(EventTarget);\n      });\n\n      li.addEventListener('dragover', (EventTarget) => {\n        (0,_drag__WEBPACK_IMPORTED_MODULE_0__.allowDrop)(EventTarget);\n      });\n\n      const div = document.createElement('div');\n      const divId = `div${task.index}`;\n\n      div.classList.add('task');\n      div.id = divId;\n      div.classList.add('drag-div');\n      div.draggable = true;\n      div.addEventListener('click', () => (0,_addRemove__WEBPACK_IMPORTED_MODULE_4__.editTask)(divId, tasks));\n      div.data = index;\n      div.addEventListener('dragstart', (EventTarget) => {\n        div.classList.add('dragging');\n        (0,_drag__WEBPACK_IMPORTED_MODULE_0__.drag)(EventTarget);\n      });\n\n      const inputCheckbox = document.createElement('input');\n      inputCheckbox.addEventListener('click', () => {\n        window.update();\n      });\n      inputCheckbox.type = 'checkbox';\n      inputCheckbox.name = task.id;\n      inputCheckbox.id = `input-check-${id}`;\n      inputCheckbox.checked = task.completed;\n\n      const inputTask = document.createElement('input');\n      inputTask.id = `li-description-${id}`;\n      inputTask.type = 'text';\n      inputTask.classList.add('description');\n      inputTask.placeholder = description;\n      inputTask.value = description || null;\n      inputTask.data = task.index;\n      inputTask.addEventListener('change', () => {\n        window.update();\n      });\n\n      const button = document.createElement('button');\n      button.classList.add('edit-btn');\n      button.id = `edit-btn-${id}`;\n      button.type = 'button';\n\n      const img = document.createElement('img');\n      img.src = _more_svg__WEBPACK_IMPORTED_MODULE_3__;\n      img.alt = 'image';\n      img.classList.add('add-btn-img');\n\n      button.appendChild(img);\n      div.appendChild(inputCheckbox);\n      div.appendChild(inputTask);\n      div.appendChild(button);\n      li.appendChild(div);\n      list.appendChild(li);\n    });\n  }\n  const template = `\n  <div class=\"top\">\n  <h1 class=\"title\">Today's To Do</h1>\n           <button id=\"refresh-btn\" type=\"button\" \n            onclick=\"window.restart()\"\n            type=\"button\"> \n            <img class=\"add-btn-img\" src=${_recycle_svg__WEBPACK_IMPORTED_MODULE_2__} alt=\"\" /> \n            </button>\n  </div>       \n          <form onsubmit=\"window.callAddTask()\" id=\"task-form\">\n            <input\n              id=\"description\"\n              type=\"text\"\n              class=\"text\"\n              placeholder=\"Add to your list ...\"\n            />\n            <button id=\"add-btn\" type=\"submit\" \n            type=\"button\"> \n          ${EnterImg}\n            </button>\n          </form>       \n          `;\n\n  container.innerHTML = template;\n  const buttonHtml = document.createElement('button');\n  buttonHtml.id = 'clear-btn';\n  buttonHtml.addEventListener('click', () => {\n    (0,_addRemove__WEBPACK_IMPORTED_MODULE_4__.clearTodo)(tasks);\n  });\n  buttonHtml.textContent = 'Clear completed tasks.';\n  container.insertAdjacentElement('beforeend', list);\n  container.insertAdjacentElement('beforeend', buttonHtml);\n};\n\nwindow.updateLocalStorage(true);\nwindow.displayTasks();\n\n//# sourceURL=webpack://mytodo-app/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/more.svg":
+/*!**********************!*\
+  !*** ./src/more.svg ***!
+  \**********************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"3adb9cb42cd31f0448c7.svg\";\n\n//# sourceURL=webpack://mytodo-app/./src/more.svg?");
+
+/***/ }),
+
+/***/ "./src/recycle.svg":
+/*!*************************!*\
+  !*** ./src/recycle.svg ***!
+  \*************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"ede1a9b720f79252166c.svg\";\n\n//# sourceURL=webpack://mytodo-app/./src/recycle.svg?");
+
+/***/ }),
+
+/***/ "./src/updateStatus.js":
+/*!*****************************!*\
+  !*** ./src/updateStatus.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst updateTodo = () => {\n  const list = document.getElementsByTagName('li');\n  const tempTasks = [];\n\n  if (list.length !== 0) {\n    Array.from(list).forEach((li, index) => {\n      const div = li.getElementsByTagName('div')[0];\n      const completed = div.getElementsByTagName('input')[0].checked;\n      const id = div.getElementsByTagName('input')[0].name;\n      const description = div.getElementsByTagName('input')[1].value;\n\n      const task = {\n        completed,\n        description,\n        index,\n        id,\n      };\n      tempTasks.push(task);\n    });\n  }\n\n  return tempTasks;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (updateTodo);\n\n\n//# sourceURL=webpack://mytodo-app/./src/updateStatus.js?");
+
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst list = document.querySelector('.list-data');\nconst description = document.querySelector('.input');\nconst save = document.querySelector('.sub');\nconst inner = document.querySelector('.inner');\nconst title = document.querySelector('.title');\nconst error = document.createElement('p');\ninner.insertBefore(error, title);\nerror.classList.add('error');\nlet todos = [];\n\nif (localStorage) {\n  todos = JSON.parse(localStorage.getItem('todos'));\n  if (todos === null) {\n    todos = [\n      {\n        description: 'drink water',\n        completed: false,\n        index: 0,\n      },\n    ];\n  }\n}\n\nconst alert = () => {\n  error.textContent = 'You did not add any To Do!';\n  setTimeout(() => error.remove(), 3000);\n};\n\nconst hidden = () => {\n  while (list.lastElementChild) {\n    list.removeChild(list.lastElementChild);\n  }\n};\n\nconst deleteData = (id) => {\n  const objective = document.getElementById(id);\n  if (objective !== null) {\n    objective.remove();\n    todos.splice(objective, 1);\n    localStorage.setItem('todos', JSON.stringify(todos));\n  }\n};\n\nconst displayData = () => {\n  hidden();\n  todos.forEach((item, indexEle) => {\n    const listItem = document.createElement('li');\n    const checkbox = document.createElement('checkbox');\n    listItem.setAttribute('id', item.index);\n    checkbox.classList.add('check');\n    listItem.draggable = true;\n    listItem.classList.add('list-item');\n    list.appendChild(checkbox);\n    list.appendChild(listItem);\n    const buttonDelete = document.createElement('i');\n    const span = document.createElement('span');\n    span.classList.add('span');\n    buttonDelete.classList.add('fas', 'fa-trash', 'delete');\n    listItem.textContent = `${item.description}`;\n    listItem.appendChild(span);\n    span.appendChild(buttonDelete);\n    buttonDelete.onclick = () => {\n      deleteData(indexEle);\n    };\n  });\n};\n\nconst addTodo = () => {\n  const descriptionData = document.querySelector('.input').value;\n  if (description === '') {\n    alert();\n  } else {\n    const todoObject = {\n      description: descriptionData,\n      completed: false,\n      index: todos.length - 1,\n    };\n    todos.push(todoObject);\n    localStorage.setItem('todos', JSON.stringify(todos));\n  }\n  displayData();\n};\n\nsave.addEventListener('click', (e) => {\n  e.preventDefault();\n  addTodo();\n  displayData();\n  description.value = '';\n});\n\ndisplayData();\n\n//# sourceURL=webpack://mytodo-app/./src/index.js?");
+main
 
 /***/ })
 
@@ -161,6 +225,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -175,6 +251,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
