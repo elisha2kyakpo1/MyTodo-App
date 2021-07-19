@@ -1,16 +1,14 @@
-import { drag, drop, allowDrop } from './drag';
-import updateTodo from './updateStatus';
-import RecycleImg from './recycle.svg';
-import MoreImg from './more.svg';
 import {
   addTask,
   editTask,
   clearTodo,
 } from './addRemove';
 import './style.css';
+import RecycleImg from './recycle.svg';
+import MoreImg from './more.svg';
+import updateTodo from './updateStatus';
 
 let tasks = null;
-
 window.updateLocalStorage = function updateLocalStorage(retrieve) {
   if (retrieve === true) {
     if (tasks === null) {
@@ -21,42 +19,27 @@ window.updateLocalStorage = function updateLocalStorage(retrieve) {
   }
   window.displayTasks();
 };
-
 window.callAddTask = function callAddTask() {
   addTask(tasks);
-}
-
+};
 window.restart = function restart() {
   tasks = null;
   window.updateLocalStorage(false);
 };
-
 window.update = function update(data) {
   if (!data) {
     const response = updateTodo();
     tasks = response;
   } else {
     tasks = data;
-
-    const todoObject = {
-      description: descriptionData,
-      completed: false,
-      index: todos.length - 1,
-    };
-    todos.push(todoObject);
-    localStorage.setItem('todos', JSON.stringify(todos));
-    main
   }
-
   window.updateLocalStorage(false);
 };
-
 window.displayTasks = function displayTasks() {
   const container = document.getElementById('container');
   const list = document.createElement('ul');
   list.id = 'list';
   const EnterImg = '&#8629';
-
   if (tasks) {
     tasks.forEach((task, index) => {
       const { description, id } = task;
@@ -66,14 +49,11 @@ window.displayTasks = function displayTasks() {
         li.classList.remove('dragging');
         drop(EventTarget);
       });
-
       li.addEventListener('dragover', (EventTarget) => {
         allowDrop(EventTarget);
       });
-
       const div = document.createElement('div');
       const divId = `div${task.index}`;
-
       div.classList.add('task');
       div.id = divId;
       div.classList.add('drag-div');
@@ -84,7 +64,6 @@ window.displayTasks = function displayTasks() {
         div.classList.add('dragging');
         drag(EventTarget);
       });
-
       const inputCheckbox = document.createElement('input');
       inputCheckbox.addEventListener('click', () => {
         window.update();
@@ -93,7 +72,6 @@ window.displayTasks = function displayTasks() {
       inputCheckbox.name = task.id;
       inputCheckbox.id = `input-check-${id}`;
       inputCheckbox.checked = task.completed;
-
       const inputTask = document.createElement('input');
       inputTask.id = `li-description-${id}`;
       inputTask.type = 'text';
@@ -104,17 +82,14 @@ window.displayTasks = function displayTasks() {
       inputTask.addEventListener('change', () => {
         window.update();
       });
-
       const button = document.createElement('button');
       button.classList.add('edit-btn');
       button.id = `edit-btn-${id}`;
       button.type = 'button';
-
       const img = document.createElement('img');
       img.src = MoreImg;
       img.alt = 'image';
       img.classList.add('add-btn-img');
-
       button.appendChild(img);
       div.appendChild(inputCheckbox);
       div.appendChild(inputTask);
@@ -145,7 +120,6 @@ window.displayTasks = function displayTasks() {
             </button>
           </form>       
           `;
-
   container.innerHTML = template;
   const buttonHtml = document.createElement('button');
   buttonHtml.id = 'clear-btn';
@@ -156,6 +130,5 @@ window.displayTasks = function displayTasks() {
   container.insertAdjacentElement('beforeend', list);
   container.insertAdjacentElement('beforeend', buttonHtml);
 };
-
 window.updateLocalStorage(true);
 window.displayTasks();
