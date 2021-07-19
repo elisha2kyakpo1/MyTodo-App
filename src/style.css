@@ -1,0 +1,57 @@
+body {
+  background-color: bisque;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  color: red;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.list-item {
+  margin-top: 2px;
+  list-style: none;
+  padding: 5px;
+}
+
+.delete {
+  display: none;
+}
+
+.list-item:hover {
+  background-color: #fca5a5;
+  cursor: pointer;
+}
+
+.list-item:hover .delete {
+  display: block;
+}
+
+.span {
+  float: right;
+  clear: both;
+}
+
+.button {
+  border: none;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 3px;
+  font-size: 1.2rem;
+}
+
+.input {
+  font-size: 1.1rem;
+}
+
+.list {
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 3px;
+}
