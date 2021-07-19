@@ -22,8 +22,18 @@ window.updateLocalStorage = function updateLocalStorage(retrieve) {
   window.displayTasks();
 };
 
+Milestone2-todoList
 window.callAddTask = function callAddTask() {
   addTask(tasks);
+
+const deleteData = (id) => {
+  const objective = document.getElementById(id);
+  if (objective !== null) {
+    objective.remove();
+    todos.splice(objective, 1);
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+main
 };
 
 window.restart = function restart() {
@@ -36,7 +46,17 @@ window.update = function update(data) {
     const response = updateTodo();
     tasks = response;
   } else {
+Milestone2-todoList
     tasks = data;
+
+    const todoObject = {
+      description: descriptionData,
+      completed: false,
+      index: todos.length - 1,
+    };
+    todos.push(todoObject);
+    localStorage.setItem('todos', JSON.stringify(todos));
+main
   }
 
   window.updateLocalStorage(false);
