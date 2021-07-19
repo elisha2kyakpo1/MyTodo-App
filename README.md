@@ -5,6 +5,9 @@ This app helps user organize their work. A user can create a todo, he/she can cr
 
 ![todo!](dist/img/todo.png)
 
+## Live link
+click [here](https://todoelisha.netlify.app/)
+
 ## Getting Started
 
 ## Setup

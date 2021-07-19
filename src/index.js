@@ -20,13 +20,16 @@ window.updateLocalStorage = function updateLocalStorage(retrieve) {
   }
   window.displayTasks();
 };
+
 window.callAddTask = function callAddTask() {
   addTask(tasks);
 };
+
 window.restart = function restart() {
   tasks = null;
   window.updateLocalStorage(false);
 };
+
 window.update = function update(data) {
   if (!data) {
     const response = updateTodo();
@@ -36,6 +39,7 @@ window.update = function update(data) {
   }
   window.updateLocalStorage(false);
 };
+
 window.displayTasks = function displayTasks() {
   const container = document.getElementById('container');
   const list = document.createElement('ul');
@@ -99,6 +103,7 @@ window.displayTasks = function displayTasks() {
       list.appendChild(li);
     });
   }
+  
   const template = `
   <div class="top">
   <h1 class="title">Today's To Do</h1>
