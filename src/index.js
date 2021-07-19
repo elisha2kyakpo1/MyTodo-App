@@ -7,6 +7,7 @@ import './style.css';
 import RecycleImg from './recycle.svg';
 import MoreImg from './more.svg';
 import updateTodo from './updateStatus';
+import { drop, allowDrop, drag } from './drag';
 
 let tasks = null;
 window.updateLocalStorage = function updateLocalStorage(retrieve) {
