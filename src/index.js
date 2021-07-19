@@ -46,7 +46,7 @@ window.update = function update(data) {
     const response = updateTodo();
     tasks = response;
   } else {
-Milestone2-todoList
+  Milestone2-todoList
     tasks = data;
 
     const todoObject = {
@@ -56,7 +56,7 @@ Milestone2-todoList
     };
     todos.push(todoObject);
     localStorage.setItem('todos', JSON.stringify(todos));
-main
+    main
   }
 
   window.updateLocalStorage(false);
@@ -170,3 +170,4 @@ window.displayTasks = function displayTasks() {
 
 window.updateLocalStorage(true);
 window.displayTasks();
+};
