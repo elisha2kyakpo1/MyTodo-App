@@ -18,5 +18,7 @@ describe('it adds, remove and edit tasks', () => {
     expect(todo.length).toBe(2);
   })
 
-
+  test('edit tasks', () => {
+    
+  })
 });
