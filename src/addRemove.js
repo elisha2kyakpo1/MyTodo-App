@@ -1,5 +1,5 @@
 const addTask = (tasks) => {
-  const description = "str";
+  const description = 'str';
   const completed = false;
   const date = new Date();
   const id = date.getMilliseconds();
@@ -10,7 +10,7 @@ const addTask = (tasks) => {
 
   const index = tasks.length + 1;
 
-  if (tasks && description !== "") {
+  if (tasks && description !== '') {
     const task = {
       description,
       completed,
@@ -33,7 +33,7 @@ const addTask = (tasks) => {
 };
 
 const removeTask = (data, tasks) => {
-  const str = data.replace("div", "");
+  const str = data.replace('div', '');
   const newTasks = [];
   tasks.forEach((task) => {
     if (task.index !== parseInt(str, 10)) {
@@ -44,21 +44,21 @@ const removeTask = (data, tasks) => {
 };
 
 const editTask = (divId, tasks) => {
-  const list = document.getElementsByClassName("drag-div");
+  const list = document.getElementsByClassName('drag-div');
   Array.from(list).forEach((li) => {
     if (li.id === divId) {
-      li.style.backgroundColor = "#fff59c78";
-      const img = li.getElementsByTagName("img")[0];
-      img.src = TrashImg;
-      img.style.cursor = "pointer";
-      img.addEventListener("click", () => {
+      li.style.backgroundColor = '#fff59c78';
+      const img = li.getElementsByTagName('img')[0];
+      img.src = 'TrashImg';
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
         removeTask(divId, tasks);
       });
     } else {
-      li.style.backgroundColor = "white";
-      const img = li.getElementsByTagName("img")[0];
-      img.src = MoreImg;
-      img.style.cursor = "all-scroll";
+      li.style.backgroundColor = 'white';
+      const img = li.getElementsByTagName('img')[0];
+      img.src = 'MoreImg';
+      img.style.cursor = 'all-scroll';
     }
   });
 };
