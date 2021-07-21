@@ -1,11 +1,5 @@
-import TrashImg from './delete.svg';
-import MoreImg from './more.svg';
-
 const addTask = (tasks) => {
-  const str = document.getElementById('description').value;
-  const firstLetter = str.charAt(0).toUpperCase();
-  str.replace(str.charAt(0), firstLetter);
-  const description = str;
+  const description = 'str';
   const completed = false;
   const date = new Date();
   const id = date.getMilliseconds();
@@ -35,7 +29,6 @@ const addTask = (tasks) => {
       }
       return 0;
     });
-    window.update(tasks);
   }
 };
 
@@ -56,7 +49,7 @@ const editTask = (divId, tasks) => {
     if (li.id === divId) {
       li.style.backgroundColor = '#fff59c78';
       const img = li.getElementsByTagName('img')[0];
-      img.src = TrashImg;
+      img.src = 'TrashImg';
       img.style.cursor = 'pointer';
       img.addEventListener('click', () => {
         removeTask(divId, tasks);
@@ -64,7 +57,7 @@ const editTask = (divId, tasks) => {
     } else {
       li.style.backgroundColor = 'white';
       const img = li.getElementsByTagName('img')[0];
-      img.src = MoreImg;
+      img.src = 'MoreImg';
       img.style.cursor = 'all-scroll';
     }
   });
@@ -77,7 +70,6 @@ const clearTodo = (tasks) => {
       temp.push(task);
     }
   });
-  window.update(temp);
 };
 
 export { addTask, editTask, clearTodo };
