@@ -1,22 +1,20 @@
-import { addTask, clearTodo, editTask, removeTask } from "../src/addRemove.js";
+import { addTask, clearTodo } from "../src/addRemove.js";
 
-describe('it adds, remove and edit tasks', () => {
+describe("it adds, remove and edit tasks", () => {
   const todo = [];
   const objectEle = {
-    description: 'drink water',
+    description: "drink water",
     completed: false,
     index: 0,
-  }
+  };
 
-  test('adds a task to the array of objects', () => {
+  test("adds a task to the array of objects", () => {
     expect(addTask(todo)).toBe();
   });
 
-  test('removes a task for the array', () => {
+  test("removes a task for the array", () => {
     todo.push(objectEle);
     clearTodo(todo);
     expect(todo.length).toBe(2);
-  })
-
-
+  });
 });
