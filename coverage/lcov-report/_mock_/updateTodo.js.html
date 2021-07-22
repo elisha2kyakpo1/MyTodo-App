@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.55% </span>
+                <span class="strong">7.95% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/88</span>
+                <span class='fraction'>7/88</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">7.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>1/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">7.14% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>1/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.6% </span>
+                <span class="strong">8.05% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/87</span>
+                <span class='fraction'>7/87</span>
             </div>
         
             
@@ -274,23 +274,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -298,7 +283,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -312,6 +296,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -329,10 +315,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -425,9 +425,9 @@ const removeTask = <span class="fstat-no" title="function not covered" >(d</span
   });
 };
 &nbsp;
-function <span class="fstat-no" title="function not covered" >displayTasks(</span>) {
-<span class="cstat-no" title="statement not covered" >  if (tasks) {</span>
-<span class="cstat-no" title="statement not covered" >    tasks.forEach(<span class="fstat-no" title="function not covered" >(t</span>ask, index) =&gt; {</span>
+function displayTasks() {
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (tasks) {
+    tasks.forEach(<span class="fstat-no" title="function not covered" >(t</span>ask, index) =&gt; {
       const { description, id } = <span class="cstat-no" title="statement not covered" >task;</span>
       const li = <span class="cstat-no" title="statement not covered" >document.createElement('li');</span>
 <span class="cstat-no" title="statement not covered" >      li.id = index;</span>
@@ -484,7 +484,7 @@ function <span class="fstat-no" title="function not covered" >displayTasks(</spa
 <span class="cstat-no" title="statement not covered" >      list.appendChild(li);</span>
     });
   }
-  const template = <span class="cstat-no" title="statement not covered" >`</span>
+  const template = `
   &lt;div class="top"&gt;
   &lt;h1 class="title"&gt;Today's To Do&lt;/h1&gt;
            &lt;button id="refresh-btn" type="button" 
@@ -520,7 +520,7 @@ removeTask,
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jul 22 2021 16:40:17 GMT+0200 (South Africa Standard Time)
+                at Thu Jul 22 2021 16:49:19 GMT+0200 (South Africa Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
