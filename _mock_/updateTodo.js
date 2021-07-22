@@ -1,4 +1,26 @@
 const tempTasks = [];
+const tasks = [];
+
+function updateLocalStorage(retrieve) {
+  if (retrieve === true) {
+    if (tasks === null) {
+      tasks;
+    }
+  } else {
+    tasks = [];
+  }
+  displayTasks();
+};
+
+function update(data) {
+  if (!data) {
+    const response = updateTodo();
+    tasks = response;
+  } else {
+    tasks = data;
+  }
+  window.updateLocalStorage(false);
+};
 
 const updateTodo = () => {
 
@@ -29,8 +51,18 @@ const updateTodo = () => {
   }
 };
 
+
+const removeTask = (data, tasks) => {
+  const str = data.replace('div', '');
+  const newTasks = [];
+  tasks.forEach((task) => {
+    if (task.index !== parseInt(str, 10)) {
+      newTasks.push(task);
+    }
+  });
+};
+
 function displayTasks() {
-  const tasks = [];
   if (tasks) {
     tasks.forEach((task, index) => {
       const { description, id } = task;
@@ -57,7 +89,7 @@ function displayTasks() {
       });
       const inputCheckbox = document.createElement('input');
       inputCheckbox.addEventListener('click', () => {
-        window.update();
+        update();
       });
       inputCheckbox.type = 'checkbox';
       inputCheckbox.name = task.id;
@@ -113,4 +145,9 @@ function displayTasks() {
           `;
 };
 
-export { updateTodo, displayTasks, tempTasks };
+export {updateTodo,
+  displayTasks,
+  tempTasks,
+  tasks,
+removeTask,
+};

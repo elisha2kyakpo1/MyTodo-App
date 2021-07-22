@@ -1,40 +1,34 @@
-import { jest } from "@jest/globals";
-import { addTask, removeTask } from "@jest/globals";
-import { updateTodo, displayTasks, tempTasks } from "../_mock_/updateTodo";
-jest.mock("../_mock_/updateTodo");
-
-import { addTask, removeTask } from "./addRemove";
-import { displayTasks, tasks } from "../src/index";
-
-jest.mock("./addRemove");
+import { jest } from '@jest/globals';
+import { addTask } from '../src/addRemove';
+import { tempTasks } from '../_mock_/updateTodo';
+import {
+  displayTasks,
+  removeTask,
+  tasks } from '../_mock_/updateTodo';
+jest.mock('../_mock_/updateTodo');
 
 displayTasks();
+describe('Testing the update functionality', () => {
+  test('add 1 li element to the ul', () => {
 
-describe("Test task manager ->", () => {
-  test("add 1 li element to the ul", () => {
-    const input = global.document.getElementById("description");
-    input.value = "Do stuff";
-    const task = { id: 4, index: 4, description: "Do stuff", completed: true };
-
-    const listBefore = global.document.getElementsByTagName("li");
-    const lenB = listBefore.length;
-    addTask(tasks);
-    setTimeout(500, () => {
-      const listAfter = global.document.getElementsByTagName("li");
-      const lenA = listAfter.length;
+    const task = { id: 4, index: 4, description: 'Do stuff', completed: true };
+    const newArr = [];
+    const lenB = tempTasks.length;
+    tempTasks.push(task);
+    addTask(newArr);
+    setTimeout(() => {
+      const lenA = tempTasks.length;
 
       expect(lenA).toBe(lenB + 1);
-    });
+    }, 500);
   });
 
-  test("remove the li element from the ul", () => {
-    const listBefore = global.document.getElementsByTagName("li");
-    const lenB = listBefore.length;
-    removeTask("div2", tasks);
-    setTimeout(500, () => {
-      const listAfter = global.document.getElementsByTagName("li");
-      const lenA = listAfter.length;
+  test('remove the li element from the ul', () => {
+    const lenB = tempTasks.length;
+    removeTask('div', tasks);
+    setTimeout(() => {
+      const lenA = tempTasks.length;
       expect(lenB - 1).toBe(lenA);
-    });
+    }, 500);
   });
 });
