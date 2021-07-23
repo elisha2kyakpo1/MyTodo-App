@@ -1,5 +1,6 @@
-import { expect } from "@jest/globals";
-import { displayTasks, tempTasks } from "../_mock_/updateTodo";
+import { expect } from '@jest/globals';
+import { tempTasks, displayTasks } from '../updateStatus'
+jest.mock('../updateStatus');
 
 test('displays the todos', () => {
   const obj = {

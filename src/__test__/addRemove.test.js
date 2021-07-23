@@ -1,4 +1,4 @@
-import { addTask, clearTodo } from '../src/addRemove';
+import { addTask, clearTodo } from '../addRemove';
 
 describe('it adds, remove and edit tasks', () => {
   const todo = [];

@@ -122,32 +122,53 @@ function displayTasks() {
     });
   }
   const template = `
-  <div class="top">
-  <h1 class="title">Today's To Do</h1>
-           <button id="refresh-btn" type="button" 
-            onclick="window.restart()"
-            type="button"> 
-            <img class="add-btn-img" src="" alt="" /> 
+  <div class='top'>
+  <h1 class='title'>Today's To Do</h1>
+           <button id='refresh-btn' type='button' 
+            onclick='window.restart()'
+            type='button'> 
+            <img class='add-btn-img' src='' alt='' /> 
             </button>
   </div>       
-          <form onsubmit="window.callAddTask()" id="task-form">
+          <form onsubmit='window.callAddTask()' id='task-form'>
             <input
-              id="description"
-              type="text"
-              class="text"
-              placeholder="Add to your list ..."
+              id='description'
+              type='text'
+              class='text'
+              placeholder='Add to your list ...'
             />
-            <button id="add-btn" type="submit" 
-            type="button"> 
+            <button id='add-btn' type='submit' 
+            type='button'> 
           
             </button>
           </form>       
           `;
 };
 
+const editTask = (divId, tasks) => {
+  const list = document.getElementsByClassName('drag-div'); 
+  Array.from(list).forEach((li) => {
+    if (li.id === divId) {
+      li.style.backgroundColor = '#fff59c78';
+      const img = li.getElementsByTagName('img')[0];
+      img.src = 'TrashImg';
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        removeTask(divId, tasks);
+      });
+    } else {
+      li.style.backgroundColor = 'white';
+      const img = li.getElementsByTagName('img')[0];
+      img.src = 'MoreImg';
+      img.style.cursor = 'all-scroll';
+    }
+  });
+};
+
 export {updateTodo,
   displayTasks,
   tempTasks,
   tasks,
+  editTask,
 removeTask,
 };
