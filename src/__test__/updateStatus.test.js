@@ -4,10 +4,11 @@ import { tempTasks, displayTasks } from '../__mocks__/updateStatus';
 
 jest.mock('../updateStatus');
 
-const task = {id: 4,
-  index: 4,
+const task = {
   description: 'Drink some water',
-  completed: true
+  completed: true,
+  index: 1,
+  id: 1
 };
 
 describe('Testing the update functionality', () => {

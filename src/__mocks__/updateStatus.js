@@ -4,22 +4,11 @@ const tasks = [];
 function updateLocalStorage(retrieve) {
   if (retrieve === true) {
     if (tasks === null) {
-      tasks;
+      tasks = JSON.parse(window.localStorage.getItem({description: 'studying', completed: false, index: 0, id: 0}));
     }
   } else {
-    tasks = [];
+    tasks;
   }
-  displayTasks();
-};
-
-function update(data) {
-  if (!data) {
-    const response = updateTodo();
-    tasks = response;
-  } else {
-    tasks = data;
-  }
-  window.updateLocalStorage(false);
 };
 
 const updateTodo = () => {
@@ -29,6 +18,7 @@ const updateTodo = () => {
   const check = document.createElement('input');
   check.type = 'checkbox';
   const input = document.createElement('input');
+  input.classList.add('data');
   ul.setAttribute('id', 'list');
   ul.appendChild(li);
 
@@ -51,6 +41,15 @@ const updateTodo = () => {
   }
 };
 
+function update(data) {
+  if (!data) {
+    const response = updateTodo();
+    tasks = response;
+  } else {
+    tasks = data;
+  }
+  updateLocalStorage(false);
+};
 
 const removeTask = (data, tasks) => {
   const str = data.replace('div', '');
@@ -58,6 +57,26 @@ const removeTask = (data, tasks) => {
   tasks.forEach((task) => {
     if (task.index !== parseInt(str, 10)) {
       newTasks.push(task);
+    }
+  });
+};
+
+const editTask = (divId, tasks) => {
+  const list = document.getElementsByClassName('drag-div'); 
+  Array.from(list).forEach((li) => {
+    if (li.id === divId) {
+      li.style.backgroundColor = '#fff59c78';
+      const img = li.getElementsByTagName('img')[0];
+      img.src = 'TrashImg';
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        removeTask(divId, tasks);
+      });
+    } else {
+      li.style.backgroundColor = 'white';
+      const img = li.getElementsByTagName('img')[0];
+      img.src = 'MoreImg';
+      img.style.cursor = 'all-scroll';
     }
   });
 };
@@ -138,30 +157,11 @@ function displayTasks() {
           `;
 };
 
-const editTask = (divId, tasks) => {
-  const list = document.getElementsByClassName('drag-div'); 
-  Array.from(list).forEach((li) => {
-    if (li.id === divId) {
-      li.style.backgroundColor = '#fff59c78';
-      const img = li.getElementsByTagName('img')[0];
-      img.src = 'TrashImg';
-      img.style.cursor = 'pointer';
-      img.addEventListener('click', () => {
-        removeTask(divId, tasks);
-      });
-    } else {
-      li.style.backgroundColor = 'white';
-      const img = li.getElementsByTagName('img')[0];
-      img.src = 'MoreImg';
-      img.style.cursor = 'all-scroll';
-    }
-  });
-};
-
-export {updateTodo,
+export {
+  updateTodo,
   displayTasks,
   tempTasks,
   tasks,
   editTask,
-removeTask,
+  removeTask,
 };
