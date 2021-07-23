@@ -1,54 +1,100 @@
-import { addTask, editTask, clearTodo } from './addRemove';
-import './style.css';
-import RecycleImg from './recycle.svg';
-import MoreImg from './more.svg';
-import updateTodo from './updateStatus';
-import { drop, allowDrop, drag } from './drag';
+/* eslint-disable no-unused-expressions, no-use-before-define, no-undef, no-const-assign  */
 
-let tasks = null;
-window.updateLocalStorage = function updateLocalStorage(retrieve) {
+const tempTasks = [];
+const tasks = [];
+
+function updateLocalStorage(retrieve) {
   if (retrieve === true) {
     if (tasks === null) {
-      tasks = JSON.parse(window.localStorage.getItem('tasks'));
+      tasks = JSON.parse(
+        window.localStorage.getItem({
+          description: 'studying',
+          completed: false,
+          index: 0,
+          id: 0,
+        }),
+      );
     }
   } else {
-    window.localStorage.setItem('tasks', JSON.stringify(tasks));
+    tasks;
   }
-  window.displayTasks();
+}
+
+const updateTodo = () => {
+  const ul = document.createElement('ul');
+  const li = document.createElement('li');
+  const check = document.createElement('input');
+  check.type = 'checkbox';
+  const input = document.createElement('input');
+  input.classList.add('data');
+  ul.setAttribute('id', 'list');
+  ul.appendChild(li);
+
+  const list = document.getElementsById('list');
+  if (list.length !== 0) {
+    Array.from(list).forEach((li, index) => {
+      const div = li.getElementsByTagName('ul')[0];
+      const completed = div.getElementsByTagName('input')[0].checked;
+      const id = div.getElementsByTagName('input')[0].name;
+      const description = div.getElementsByTagName('input')[1].value;
+
+      const task = {
+        completed,
+        description,
+        index,
+        id,
+      };
+      tempTasks.push(task);
+    });
+  }
 };
-window.callAddTask = function callAddTask() {
-  addTask(tasks);
-};
-window.restart = function restart() {
-  tasks = null;
-  window.updateLocalStorage(false);
-};
-window.update = function update(data) {
+
+function update(data) {
   if (!data) {
     const response = updateTodo();
     tasks = response;
   } else {
     tasks = data;
   }
-  window.updateLocalStorage(false);
+  updateLocalStorage(false);
+}
+
+const removeTask = (data, tasks) => {
+  const str = data.replace('div', '');
+  const newTasks = [];
+  tasks.forEach((task) => {
+    if (task.index !== parseInt(str, 10)) {
+      newTasks.push(task);
+    }
+  });
 };
-window.displayTasks = function displayTasks() {
-  const container = document.getElementById('container');
-  const list = document.createElement('ul');
-  list.id = 'list';
-  const EnterImg = '&#8629';
+
+const editTask = (divId, tasks) => {
+  const list = document.getElementsByClassName('drag-div');
+  Array.from(list).forEach((li) => {
+    if (li.id === divId) {
+      li.style.backgroundColor = '#fff59c78';
+      const img = li.getElementsByTagName('img')[0];
+      img.src = 'TrashImg';
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => {
+        removeTask(divId, tasks);
+      });
+    } else {
+      li.style.backgroundColor = 'white';
+      const img = li.getElementsByTagName('img')[0];
+      img.src = 'MoreImg';
+      img.style.cursor = 'all-scroll';
+    }
+  });
+};
+
+function displayTasks() {
   if (tasks) {
     tasks.forEach((task, index) => {
       const { description, id } = task;
       const li = document.createElement('li');
       li.id = index;
-      li.addEventListener('drop', (EventTarget) => {
-        li.classList.remove('dragging');
-        drop(EventTarget);
-      });
-      li.addEventListener('dragover', (EventTarget) => {
-        allowDrop(EventTarget);
-      });
       const div = document.createElement('div');
       const divId = `div${task.index}`;
       div.classList.add('task');
@@ -63,7 +109,7 @@ window.displayTasks = function displayTasks() {
       });
       const inputCheckbox = document.createElement('input');
       inputCheckbox.addEventListener('click', () => {
-        window.update();
+        update();
       });
       inputCheckbox.type = 'checkbox';
       inputCheckbox.name = task.id;
@@ -84,7 +130,7 @@ window.displayTasks = function displayTasks() {
       button.id = `edit-btn-${id}`;
       button.type = 'button';
       const img = document.createElement('img');
-      img.src = MoreImg;
+      img.src = 'MoreImg';
       img.alt = 'image';
       img.classList.add('add-btn-img');
       button.appendChild(img);
@@ -101,7 +147,7 @@ window.displayTasks = function displayTasks() {
            <button id='refresh-btn' type='button'
             onclick='window.restart()'
             type='button'>
-            <img class='add-btn-img' src=${RecycleImg} alt='' />
+            <img class='add-btn-img' src='' alt='' />
             </button>
   </div>
           <form onsubmit='window.callAddTask()' id='task-form'>
@@ -113,19 +159,14 @@ window.displayTasks = function displayTasks() {
             />
             <button id='add-btn' type='submit'
             type='button'>
-          ${EnterImg}
+
             </button>
           </form>
           `;
-  container.innerHTML = template;
-  const buttonHtml = document.createElement('button');
-  buttonHtml.id = 'clear-btn';
-  buttonHtml.addEventListener('click', () => {
-    clearTodo(tasks);
-  });
-  buttonHtml.textContent = 'Clear completed tasks.';
-  container.insertAdjacentElement('beforeend', list);
-  container.insertAdjacentElement('beforeend', buttonHtml);
+
+  template;
+}
+
+export {
+  updateTodo, displayTasks, tempTasks, tasks, editTask, removeTask,
 };
-window.updateLocalStorage(true);
-window.displayTasks();
