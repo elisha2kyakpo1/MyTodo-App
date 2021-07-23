@@ -1,20 +1,18 @@
-/* eslint-disable is constant */
-
-import { addTask, editTask, clearTodo } from "./addRemove";
-import "./style.css";
-import RecycleImg from "./recycle.svg";
-import MoreImg from "./more.svg";
-import updateTodo from "./updateStatus";
-import { drop, allowDrop, drag } from "./drag";
+import { addTask, editTask, clearTodo } from './addRemove';
+import './style.css';
+import RecycleImg from './recycle.svg';
+import MoreImg from './more.svg';
+import updateTodo from './updateStatus';
+import { drop, allowDrop, drag } from './drag';
 
 let tasks = null;
 window.updateLocalStorage = function updateLocalStorage(retrieve) {
   if (retrieve === true) {
     if (tasks === null) {
-      tasks = JSON.parse(window.localStorage.getItem("tasks"));
+      tasks = JSON.parse(window.localStorage.getItem('tasks'));
     }
   } else {
-    window.localStorage.setItem("tasks", JSON.stringify(tasks));
+    window.localStorage.setItem('tasks', JSON.stringify(tasks));
   }
   window.displayTasks();
 };
@@ -35,60 +33,60 @@ window.update = function update(data) {
   window.updateLocalStorage(false);
 };
 window.displayTasks = function displayTasks() {
-  const container = document.getElementById("container");
-  const list = document.createElement("ul");
-  list.id = "list";
-  const EnterImg = "&#8629";
+  const container = document.getElementById('container');
+  const list = document.createElement('ul');
+  list.id = 'list';
+  const EnterImg = '&#8629';
   if (tasks) {
     tasks.forEach((task, index) => {
       const { description, id } = task;
-      const li = document.createElement("li");
+      const li = document.createElement('li');
       li.id = index;
-      li.addEventListener("drop", (EventTarget) => {
-        li.classList.remove("dragging");
+      li.addEventListener('drop', (EventTarget) => {
+        li.classList.remove('dragging');
         drop(EventTarget);
       });
-      li.addEventListener("dragover", (EventTarget) => {
+      li.addEventListener('dragover', (EventTarget) => {
         allowDrop(EventTarget);
       });
-      const div = document.createElement("div");
+      const div = document.createElement('div');
       const divId = `div${task.index}`;
-      div.classList.add("task");
+      div.classList.add('task');
       div.id = divId;
-      div.classList.add("drag-div");
+      div.classList.add('drag-div');
       div.draggable = true;
-      div.addEventListener("click", () => editTask(divId, tasks));
+      div.addEventListener('click', () => editTask(divId, tasks));
       div.data = index;
-      div.addEventListener("dragstart", (EventTarget) => {
-        div.classList.add("dragging");
+      div.addEventListener('dragstart', (EventTarget) => {
+        div.classList.add('dragging');
         drag(EventTarget);
       });
-      const inputCheckbox = document.createElement("input");
-      inputCheckbox.addEventListener("click", () => {
+      const inputCheckbox = document.createElement('input');
+      inputCheckbox.addEventListener('click', () => {
         window.update();
       });
-      inputCheckbox.type = "checkbox";
+      inputCheckbox.type = 'checkbox';
       inputCheckbox.name = task.id;
       inputCheckbox.id = `input-check-${id}`;
       inputCheckbox.checked = task.completed;
-      const inputTask = document.createElement("input");
+      const inputTask = document.createElement('input');
       inputTask.id = `li-description-${id}`;
-      inputTask.type = "text";
-      inputTask.classList.add("description");
+      inputTask.type = 'text';
+      inputTask.classList.add('description');
       inputTask.placeholder = description;
       inputTask.value = description || null;
       inputTask.data = task.index;
-      inputTask.addEventListener("change", () => {
+      inputTask.addEventListener('change', () => {
         window.update();
       });
-      const button = document.createElement("button");
-      button.classList.add("edit-btn");
+      const button = document.createElement('button');
+      button.classList.add('edit-btn');
       button.id = `edit-btn-${id}`;
-      button.type = "button";
-      const img = document.createElement("img");
+      button.type = 'button';
+      const img = document.createElement('img');
       img.src = MoreImg;
-      img.alt = "image";
-      img.classList.add("add-btn-img");
+      img.alt = 'image';
+      img.classList.add('add-btn-img');
       button.appendChild(img);
       div.appendChild(inputCheckbox);
       div.appendChild(inputTask);
@@ -120,14 +118,14 @@ window.displayTasks = function displayTasks() {
           </form>
           `;
   container.innerHTML = template;
-  const buttonHtml = document.createElement("button");
-  buttonHtml.id = "clear-btn";
-  buttonHtml.addEventListener("click", () => {
+  const buttonHtml = document.createElement('button');
+  buttonHtml.id = 'clear-btn';
+  buttonHtml.addEventListener('click', () => {
     clearTodo(tasks);
   });
-  buttonHtml.textContent = "Clear completed tasks.";
-  container.insertAdjacentElement("beforeend", list);
-  container.insertAdjacentElement("beforeend", buttonHtml);
+  buttonHtml.textContent = 'Clear completed tasks.';
+  container.insertAdjacentElement('beforeend', list);
+  container.insertAdjacentElement('beforeend', buttonHtml);
 };
 window.updateLocalStorage(true);
 window.displayTasks();
