@@ -4,15 +4,16 @@ const tasks = [];
 function updateLocalStorage(retrieve) {
   if (retrieve === true) {
     if (tasks === null) {
-      tasks = JSON.parse(window.localStorage.getItem({description: 'studying', completed: false, index: 0, id: 0}));
+      tasks = JSON.parse(window.localStorage.getItem({
+        description: 'studying', completed: false, index: 0, id: 0,
+      }));
     }
   } else {
     tasks;
   }
-};
+}
 
 const updateTodo = () => {
-
   const ul = document.createElement('ul');
   const li = document.createElement('li');
   const check = document.createElement('input');
@@ -49,7 +50,7 @@ function update(data) {
     tasks = data;
   }
   updateLocalStorage(false);
-};
+}
 
 const removeTask = (data, tasks) => {
   const str = data.replace('div', '');
@@ -62,7 +63,7 @@ const removeTask = (data, tasks) => {
 };
 
 const editTask = (divId, tasks) => {
-  const list = document.getElementsByClassName('drag-div'); 
+  const list = document.getElementsByClassName('drag-div');
   Array.from(list).forEach((li) => {
     if (li.id === divId) {
       li.style.backgroundColor = '#fff59c78';
@@ -155,7 +156,7 @@ function displayTasks() {
             </button>
           </form>       
           `;
-};
+}
 
 export {
   updateTodo,

@@ -28,7 +28,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "dev": "webpack --mode development",
     "build": "webpack",
     "start": "webpack serve --open"

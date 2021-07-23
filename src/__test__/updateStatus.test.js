@@ -8,7 +8,7 @@ const task = {
   description: 'Drink some water',
   completed: true,
   index: 1,
-  id: 1
+  id: 1,
 };
 
 describe('Testing the update functionality', () => {
