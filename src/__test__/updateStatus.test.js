@@ -1,9 +1,15 @@
 import { jest } from '@jest/globals';
 import { addTask } from '../addRemove';
-import { tempTasks, displayTasks } from '../updateStatus';
+import { tempTasks, displayTasks } from '../__mocks__/updateStatus';
+
 jest.mock('../updateStatus');
 
-const task = { id: 4, index: 4, description: 'Drink some water', completed: true };
+const task = {id: 4,
+  index: 4,
+  description: 'Drink some water',
+  completed: true
+};
+
 describe('Testing the update functionality', () => {
   test('add 1 li element to the ul', () => {
     const newArr = [];

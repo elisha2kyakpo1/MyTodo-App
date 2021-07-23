@@ -68,13 +68,6 @@ function displayTasks() {
       const { description, id } = task;
       const li = document.createElement('li');
       li.id = index;
-      li.addEventListener('drop', (EventTarget) => {
-        li.classList.remove('dragging');
-        drop(EventTarget);
-      });
-      li.addEventListener('dragover', (EventTarget) => {
-        allowDrop(EventTarget);
-      });
       const div = document.createElement('div');
       const divId = `div${task.index}`;
       div.classList.add('task');
@@ -110,7 +103,7 @@ function displayTasks() {
       button.id = `edit-btn-${id}`;
       button.type = 'button';
       const img = document.createElement('img');
-      img.src = MoreImg;
+      img.src = 'MoreImg';
       img.alt = 'image';
       img.classList.add('add-btn-img');
       button.appendChild(img);

@@ -1,5 +1,6 @@
 import { expect } from '@jest/globals';
-import { tempTasks, displayTasks } from '../updateStatus'
+import { tempTasks, displayTasks } from '../__mocks__/updateStatus';
+
 jest.mock('../updateStatus');
 
 test('displays the todos', () => {
@@ -12,5 +13,5 @@ test('displays the todos', () => {
   tempTasks.forEach((ele) => {
     displayTasks();
     expect(ele.description).toBe('my data');
-  })
+  });
 });

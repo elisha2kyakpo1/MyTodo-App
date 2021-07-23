@@ -1,5 +1,6 @@
 import { jest } from '@jest/globals';
-import { editTask } from '../updateStatus';
+import { editTask } from '../__mocks__/updateStatus';
+
 jest.mock('../updateStatus');
 
 const { JSDOM } = require('jsdom');
