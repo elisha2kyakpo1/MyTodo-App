@@ -1,12 +1,19 @@
+/* eslint-disable no-unused-expressions, no-use-before-define, no-undef, no-const-assign  */
+
 const tempTasks = [];
 const tasks = [];
 
 function updateLocalStorage(retrieve) {
   if (retrieve === true) {
     if (tasks === null) {
-      tasks = JSON.parse(window.localStorage.getItem({
-        description: 'studying', completed: false, index: 0, id: 0,
-      }));
+      tasks = JSON.parse(
+        window.localStorage.getItem({
+          description: 'studying',
+          completed: false,
+          index: 0,
+          id: 0,
+        }),
+      );
     }
   } else {
     tasks;
@@ -137,12 +144,12 @@ function displayTasks() {
   const template = `
   <div class='top'>
   <h1 class='title'>Today's To Do</h1>
-           <button id='refresh-btn' type='button' 
+           <button id='refresh-btn' type='button'
             onclick='window.restart()'
-            type='button'> 
-            <img class='add-btn-img' src='' alt='' /> 
+            type='button'>
+            <img class='add-btn-img' src='' alt='' />
             </button>
-  </div>       
+  </div>
           <form onsubmit='window.callAddTask()' id='task-form'>
             <input
               id='description'
@@ -150,19 +157,16 @@ function displayTasks() {
               class='text'
               placeholder='Add to your list ...'
             />
-            <button id='add-btn' type='submit' 
-            type='button'> 
-          
+            <button id='add-btn' type='submit'
+            type='button'>
+
             </button>
-          </form>       
+          </form>
           `;
+
+  template;
 }
 
 export {
-  updateTodo,
-  displayTasks,
-  tempTasks,
-  tasks,
-  editTask,
-  removeTask,
+  updateTodo, displayTasks, tempTasks, tasks, editTask, removeTask,
 };
